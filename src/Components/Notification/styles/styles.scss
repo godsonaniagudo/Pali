@@ -1,0 +1,44 @@
+.notification {
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  width: 25vw;
+  border-style: none;
+  border-radius: 6px;
+  overflow: hidden;
+  box-shadow: 0px 0px 8px 0px rgba(184, 184, 184, 0.75);
+  -webkit-box-shadow: 0px 0px 8px 0px rgba(184, 184, 184, 0.75);
+  -moz-box-shadow: 0px 0px 8px 0px rgba(184, 184, 184, 0.75);
+
+  .notificationBody {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+
+    img {
+      cursor: pointer;
+      padding: 0px;
+    }
+  }
+
+  .notificationShade {
+    height: 4px;
+  }
+}
+
+.success {
+  background: rgba(99, 206, 99, 1);
+}
+
+.error {
+  background: rgba(229, 43, 32, 1);
+}
+
+.warning {
+  background: rgba(250, 242, 204, 1);
+}
+
+.notice {
+  background: rgba(188, 223, 241, 1);
+}

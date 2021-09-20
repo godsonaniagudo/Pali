@@ -1,0 +1,27 @@
+.content {
+  width: 30%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.newPassword img {
+  padding: 50px;
+}
+
+.newPassword .content p {
+  text-align: center;
+}
+
+.newPassword .content button {
+  margin-top: 15px;
+  width: 100%;
+}
+
+.newPassword .content input {
+  text-align: left;
+}
+
+.newPassword .content .oxfordText {
+  margin-bottom: 10px;
+}
+/*# sourceMappingURL=styles.css.map */

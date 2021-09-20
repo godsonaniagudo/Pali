@@ -1,0 +1,51 @@
+.notification {
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  width: 25vw;
+  border-style: none;
+  border-radius: 6px;
+  overflow: hidden;
+  box-shadow: 0px 0px 8px 0px rgba(184, 184, 184, 0.75);
+  -webkit-box-shadow: 0px 0px 8px 0px rgba(184, 184, 184, 0.75);
+  -moz-box-shadow: 0px 0px 8px 0px rgba(184, 184, 184, 0.75);
+}
+
+.notification .notificationBody {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 15px;
+}
+
+.notification .notificationBody img {
+  cursor: pointer;
+  padding: 0px;
+}
+
+.notification .notificationShade {
+  height: 4px;
+}
+
+.success {
+  background: #63ce63;
+}
+
+.error {
+  background: #e52b20;
+}
+
+.warning {
+  background: #faf2cc;
+}
+
+.notice {
+  background: #bcdff1;
+}
+/*# sourceMappingURL=styles.css.map */

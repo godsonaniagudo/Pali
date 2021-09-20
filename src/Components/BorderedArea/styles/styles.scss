@@ -1,0 +1,10 @@
+@import "../../../styles/colors.scss";
+
+.borderedArea {
+    border-style: none;
+    border-style: solid;
+    padding: 20px;
+    border-width: 1px;
+    border-radius: 6px;
+    border-color: rgb(233, 233, 233);
+}

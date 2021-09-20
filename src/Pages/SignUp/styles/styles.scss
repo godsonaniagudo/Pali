@@ -1,0 +1,190 @@
+.content {
+    width: 30%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.selectCompany {
+    img {
+        padding: 50px;
+    }
+
+
+    .companyDetails {
+        display: flex;
+        margin-top: 50px;
+        margin-bottom: 20px;
+
+        img {
+            width: 70px;
+            height: 70px;
+            padding: 0px;
+        }
+
+        div {
+            margin-left: 20px;
+
+            p {
+                text-align: left;
+                margin-bottom: 10px;
+            }
+        }
+    }
+
+    .content {
+        p {
+            text-align: center;
+        }
+
+        .buttonContainer {
+            display: flex;
+            justify-content: center;
+
+            button {
+            margin-top: 15px;
+            width: 30%;
+        }
+        }
+
+        .oxfordText {
+            margin-bottom: 10px;
+        }
+
+        .terms {
+            display: flex;
+
+            p {
+                text-align: left;
+                margin-left: 15px;
+            }
+        }
+    }
+}
+
+.setPhoneNumber {
+    img {
+        padding: 50px;
+    }
+
+    .content {
+        p {
+            text-align: center;
+        }
+
+        button {
+            margin-top: 15px;
+            width: 100%;
+        }
+
+        input {
+            text-align: center;
+        }
+
+        .oxfordText {
+            margin-bottom: 10px;
+        }
+    }
+}
+
+.signUpBody {
+    display: flex;
+
+    .leftSection {
+        width: 25%;
+    }
+
+    .rightSection {
+        width: 75%;
+        padding-top: 100px;
+        box-sizing: border-box;
+
+        .content {
+
+            button {
+                margin-top: 15px;
+                width: 100%;
+            }
+
+            .headerText {
+                margin-bottom: 15px;
+                margin-top: 5px;
+            }
+        }
+    }
+}
+
+.signupSuccess {
+    img {
+        padding: 50px;
+    }
+
+    .content {
+        width: 30%;
+        p {
+            text-align: center;
+        }
+
+        button {
+            margin-top: 15px;
+            width: 100%;
+        }
+
+        .oxfordText {
+            margin-bottom: 10px;
+        }
+    }
+}
+
+.verifyPhoneNumber {
+    img {
+        padding: 50px;
+    }
+
+    .content {
+        p {
+            text-align: center;
+        }
+
+        button {
+            margin-top: 20px;
+            width: 100%;
+            font-weight: 500;
+        }
+
+        input {
+            text-align: center;
+            font-weight: 800;
+            font-size: 20px;
+            letter-spacing: 0.3em;
+        }
+
+        input::placeholder {
+            color: rgba(161, 163, 166, 1);
+            letter-spacing: 0.3em;
+        }
+
+        .formInput {
+            margin-top: 20px;
+        }
+
+        .oxfordText {
+            margin-bottom: 15px;
+            margin-top: 15px;
+        }
+
+        .topText {
+            display: flex;
+            justify-content: center;
+
+            div {
+            width: 100;
+            margin-left: auto;
+            margin-right: auto;
+            
+            p {
+                text-align: left;
+            }
+            }
+        }
+    }
+}

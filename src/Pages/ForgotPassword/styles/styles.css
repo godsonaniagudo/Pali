@@ -1,0 +1,27 @@
+.content {
+  width: 30%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.forgotPassword img {
+  padding: 50px;
+}
+
+.forgotPassword .content p {
+  text-align: center;
+}
+
+.forgotPassword .content button {
+  margin-top: 15px;
+  width: 100%;
+}
+
+.forgotPassword .content input {
+  text-align: left;
+}
+
+.forgotPassword .content .oxfordText {
+  margin-bottom: 10px;
+}
+/*# sourceMappingURL=styles.css.map */

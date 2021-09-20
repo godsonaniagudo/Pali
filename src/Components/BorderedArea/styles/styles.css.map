@@ -1,0 +1,10 @@
+{
+    "version": 3,
+    "mappings": "AAEA,AAAA,aAAa,CAAC;EACV,YAAY,EAAE,IAAI;EAClB,YAAY,EAAE,KAAK;EACnB,OAAO,EAAE,IAAI;EACb,YAAY,EAAE,GAAG;EACjB,aAAa,EAAE,GAAG;EAClB,YAAY,EAAE,OAAkB;CACnC",
+    "sources": [
+        "styles.scss",
+        "../../../styles/colors.scss"
+    ],
+    "names": [],
+    "file": "styles.css"
+}

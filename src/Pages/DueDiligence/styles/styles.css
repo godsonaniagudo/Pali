@@ -1,0 +1,109 @@
+.content {
+  width: 30%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.dueDiligence .logo {
+  padding: 50px;
+}
+
+.dueDiligence .sameAddress {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.dueDiligence .sameAddress label {
+  margin: 0px;
+  top: 0;
+  left: 0;
+}
+
+.dueDiligence .content p {
+  text-align: center;
+}
+
+.dueDiligence .content button {
+  margin-top: 15px;
+  width: 40%;
+}
+
+.dueDiligence .content input {
+  text-align: left;
+}
+
+.dueDiligence .content .buttonContainer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.dueDiligence .content .address {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 100%;
+}
+
+.dueDiligence .content .address .dropDown {
+  width: 30%;
+}
+
+.dueDiligence .content .address .formInput {
+  width: 30%;
+}
+
+.uploadCompanyDocuments img {
+  padding: 50px;
+}
+
+.uploadCompanyDocuments .content p {
+  text-align: center;
+}
+
+.uploadCompanyDocuments .content button {
+  margin-top: 15px;
+  width: 40%;
+}
+
+.uploadCompanyDocuments .content input {
+  text-align: left;
+}
+
+.uploadCompanyDocuments .content .buttonContainer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.uploadCompanyDocuments .content .address {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 100%;
+}
+
+.uploadCompanyDocuments .content .address .formInput {
+  width: 30%;
+}
+
+.uploadCompanyDocuments .content .uploadArea {
+  margin-top: 20px;
+}
+/*# sourceMappingURL=styles.css.map */

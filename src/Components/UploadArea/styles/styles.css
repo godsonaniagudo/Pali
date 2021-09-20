@@ -1,0 +1,54 @@
+.uploadArea label {
+  position: unset;
+  margin-bottom: 15px;
+}
+
+.uploadArea .uploadContent {
+  border-style: none;
+  border-style: solid;
+  border-width: 1px;
+  border-radius: 6px;
+  border-color: rgba(0, 29, 74, 0.2);
+  padding: 50px;
+  position: relative;
+}
+
+.uploadArea .uploadContent .alterSelection {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.uploadArea .uploadContent .alterSelection p {
+  margin-left: 10px;
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+.uploadArea .uploadContent .alterSelection p:hover {
+  color: black;
+}
+
+.uploadArea .uploadContent span {
+  color: blue;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.uploadArea .uploadContent span:hover {
+  color: #0000c9;
+}
+
+.uploadArea .uploadContent .infoLabel {
+  position: absolute;
+  right: 5px;
+  bottom: 5px;
+}
+
+.uploadArea .uploadContent input {
+  display: none;
+}
+/*# sourceMappingURL=styles.css.map */

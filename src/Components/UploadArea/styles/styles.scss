@@ -1,0 +1,50 @@
+.uploadArea {
+    label {
+        position: unset;
+        margin-bottom: 15px;
+    }
+    .uploadContent {
+        border-style: none;
+        border-style: solid;
+        border-width: 1px;
+        border-radius: 6px;
+        border-color: rgba(0, 29, 74, 0.2);
+        padding: 50px;
+        position: relative;
+
+        .alterSelection {
+            display: flex;
+            justify-content: center;
+
+            p{
+                margin-left: 10px;
+                margin-right: 10px;
+                cursor: pointer;
+            }
+
+            p:hover {
+                color: black;
+            }
+        }
+
+        span {
+            color: blue;
+            text-decoration: underline;
+            cursor: pointer;
+        }
+
+        span:hover {
+            color: rgb(0, 0, 201);
+        }
+
+        .infoLabel {
+            position: absolute;
+            right: 5px;
+            bottom: 5px;
+        }
+
+        input {
+            display: none;
+        }
+    }
+}

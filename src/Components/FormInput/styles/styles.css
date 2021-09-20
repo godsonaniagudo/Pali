@@ -1,0 +1,48 @@
+div {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+div label {
+  margin: 0px;
+  position: relative;
+  top: 10px;
+  left: 20px;
+  background-color: white;
+  padding-left: 5px;
+  padding-right: 5px;
+  color: #3b4664;
+  font-size: 12px;
+}
+
+div .formInputContainer {
+  border-style: none;
+  border-style: solid;
+  border-width: 1px;
+  border-radius: 6px;
+  border-color: rgba(0, 29, 74, 0.2);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  overflow: hidden;
+}
+
+div .formInputContainer input {
+  padding: 15px;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  border-style: none;
+  border-radius: 6px;
+}
+
+div .formInputContainer span {
+  margin-left: 20px;
+  margin-right: 20px;
+  font-size: 10px;
+  cursor: pointer;
+}
+/*# sourceMappingURL=styles.css.map */

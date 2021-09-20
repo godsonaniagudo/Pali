@@ -1,0 +1,91 @@
+.login nav {
+  padding: 50px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.login .content button {
+  width: 100%;
+  margin-top: 15px;
+}
+
+.loginOTP img {
+  padding: 50px;
+}
+
+.loginOTP .content p {
+  text-align: center;
+}
+
+.loginOTP .content button {
+  margin-top: 20px;
+  width: 100%;
+  font-weight: 500;
+}
+
+.loginOTP .content input {
+  text-align: center;
+  font-weight: 800;
+  font-size: 20px;
+  letter-spacing: 0.3em;
+}
+
+.loginOTP .content input::-webkit-input-placeholder {
+  color: #a1a3a6;
+  letter-spacing: 0.3em;
+}
+
+.loginOTP .content input:-ms-input-placeholder {
+  color: #a1a3a6;
+  letter-spacing: 0.3em;
+}
+
+.loginOTP .content input::-ms-input-placeholder {
+  color: #a1a3a6;
+  letter-spacing: 0.3em;
+}
+
+.loginOTP .content input::placeholder {
+  color: #a1a3a6;
+  letter-spacing: 0.3em;
+}
+
+.loginOTP .content .formInput {
+  margin-top: 20px;
+}
+
+.loginOTP .content .oxfordText {
+  margin-bottom: 15px;
+  margin-top: 15px;
+}
+
+.loginOTP .content .topText {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.loginOTP .content .topText div {
+  width: 100;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.loginOTP .content .topText div p {
+  text-align: left;
+}
+
+.loginOTP .expired p {
+  text-align: left;
+}
+/*# sourceMappingURL=style.css.map */

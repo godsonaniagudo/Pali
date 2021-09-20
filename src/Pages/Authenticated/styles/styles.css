@@ -1,0 +1,492 @@
+.authenticated {
+  height: 100vh;
+  width: 100vw;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.authenticated .leftSection {
+  width: 25%;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.authenticated .leftSection .menuItem {
+  cursor: pointer;
+}
+
+.authenticated .leftSection .menuItem:hover {
+  color: #8fd5bd;
+}
+
+.authenticated .leftSection .logo {
+  width: 30%;
+}
+
+.authenticated .leftSection nav {
+  padding: 20px;
+}
+
+.authenticated .leftSection nav div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.authenticated .leftSection nav div img {
+  margin-right: 10px;
+}
+
+.authenticated .leftSection .user {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 20px;
+}
+
+.authenticated .leftSection .user .left {
+  padding: 0px;
+}
+
+.authenticated .leftSection .user .left div {
+  background-color: #9b51e0;
+  width: 50px;
+  height: 50px;
+  border-radius: 25px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: white;
+}
+
+.authenticated .leftSection .user .right {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding-left: 10px;
+}
+
+.authenticated .leftSection .user .right .nameAndRole {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 0px;
+}
+
+.authenticated .leftSection .user .right .nameAndRole p {
+  margin-right: 5px;
+}
+
+.authenticated .leftSection .user .right .nameAndRole .role {
+  padding: 5px;
+  border-radius: 5px;
+}
+
+.authenticated .leftSection .user .right .company {
+  margin: 0px;
+  padding: 0px;
+  margin-top: 5px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.authenticated .leftSection .user .right .company img {
+  width: 10px;
+  height: 10px;
+  margin-left: 10px;
+}
+
+.authenticated .rightSection {
+  width: 75%;
+}
+
+.authenticated .rightSection nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 15px;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.authenticated .rightSection nav .navLeft {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.authenticated .rightSection nav .navLeft img {
+  margin-right: 15px;
+}
+
+.authenticated .rightSection nav .navLeft input {
+  border-style: none;
+  width: 40vw;
+}
+
+.authenticated .rightSection nav .navRight {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.home .homeContent .homeContentTop {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.home .homeContent .homeContentTop div:nth-child(1) {
+  width: 30%;
+}
+
+.home .homeContent .homeContentTop div:nth-child(2) {
+  width: 26%;
+}
+
+.home .homeContent .homeContentTop div:nth-child(3) {
+  width: 40%;
+}
+
+.home .homeContent .homeContentTop .balanceTable {
+  width: 100%;
+}
+
+.home .homeContent .homeContentTop .balanceTable td {
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+.home .homeContent .homeContentTop .balanceTable .amount {
+  text-align: right;
+}
+
+.home .homeContent .historyTable td {
+  padding-top: 7px;
+  padding-bottom: 7px;
+}
+
+.home .homeContent .historyTable .amount {
+  text-align: right;
+}
+
+.people .bodyHeader {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.people hr {
+  margin: 0px;
+  border-style: none;
+  border-top-style: solid;
+  border-color: #e0e0e0;
+}
+
+.people table {
+  width: 100%;
+}
+
+.people table td {
+  padding: 10px;
+}
+
+.people .invite {
+  background-color: white;
+}
+
+.people .invite .inviteBody {
+  padding: 20px;
+}
+
+.people .invite .inviteHeader {
+  padding: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.people .invite .inviteHeader img {
+  padding: 0px;
+  cursor: pointer;
+}
+
+.people .invite .buttonContainer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
+.people .personDetails {
+  background-color: white;
+  width: 40vw;
+  max-height: 90vh;
+  overflow-y: scroll;
+}
+
+.people .personDetails .personDetailsHeader {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 20px;
+}
+
+.people .personDetails .personDetailsHeader div img {
+  margin-right: 20px;
+}
+
+.people .personDetails .personDetailsUser {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding-left: 20px;
+  padding-right: 20px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.people .personDetails .personDetailsUser img {
+  width: 40px;
+  height: 40px;
+  border-radius: 20px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.people .personDetails .personDetailsUser p {
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+
+.people .personDetails .personalDetailsForm {
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.people .personDetails .personalDetailsForm label {
+  font-size: 10px !important;
+}
+
+.people .personDetails .personalDetailsBank {
+  padding: 20px;
+}
+
+.people .personDetails .personalDetailsBank .personalDetailsBankDetails {
+  border-style: none;
+  border-style: solid;
+  border-radius: 6px;
+  border-width: 1px;
+  border-color: #e7e7e7;
+}
+
+.people .personDetails .personalDetailsBank .personalDetailsBankDetails .bankHeader {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 15px;
+}
+
+.people .personDetails .personalDetailsBank .personalDetailsBankDetails .bank {
+  border-style: none;
+  border-style: solid;
+  border-radius: 6px;
+  border-width: 1px;
+  border-color: #e7e7e7;
+  margin: 15px;
+}
+
+.people .personDetails .personalDetailsBank .personalDetailsBankDetails .bank .bankHeader {
+  padding: 15px;
+  display: block;
+}
+
+.people .personDetails .personalDetailsBank .personalDetailsBankDetails .bank .bankHeader div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.people .personDetails .personalDetailsBank .personalDetailsBankDetails .bank .bankBody {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  background-color: #f9fafb;
+}
+
+.people .personDetails .personalDetailsBank .personalDetailsBankDetails .bank .bankBody div {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  padding: 20px;
+}
+
+.people .personDetails .deleteText {
+  padding: 20px;
+  margin-top: 30px;
+  color: #eb5757;
+  cursor: pointer;
+  display: inline;
+}
+
+.people .personDetails .deleteText:hover {
+  color: #a03939;
+}
+
+.people .deleteEmployee {
+  background-color: white;
+  padding: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  max-width: 30vw;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-radius: 6px;
+}
+
+.people .deleteEmployee img {
+  width: 40px;
+  height: 40px;
+}
+
+.people .deleteEmployee p {
+  text-align: center;
+}
+
+.people .deleteEmployee button {
+  width: 40%;
+}
+
+.profile .user {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.profile .user .placeholder {
+  width: 50px;
+  height: 50px;
+  border-radius: 25px;
+  background-color: blueviolet;
+}
+
+.headerItem div {
+  width: 70%;
+  height: 2px;
+  margin-top: 10px;
+}
+
+.headerItem .inactiveP {
+  color: rgba(136, 120, 128, 0.6);
+}
+
+.headerItem .inactiveDiv {
+  background-color: rgba(136, 120, 128, 0.6);
+}
+
+.headerItem .activeP {
+  color: #8FD5BD;
+}
+
+.headerItem .activeDiv {
+  background-color: #8FD5BD;
+}
+
+.personItem {
+  cursor: pointer;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.personItem .personNameAndType {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.personItem .imagePlaceholder {
+  width: 30px;
+  height: 30px;
+  border-radius: 15px;
+  background-color: #8FD5BD;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: white;
+}
+
+.personItem:hover {
+  background-color: #f0f0f0;
+}
+/*# sourceMappingURL=styles.css.map */

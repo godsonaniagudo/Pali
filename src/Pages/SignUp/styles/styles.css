@@ -1,0 +1,204 @@
+.content {
+  width: 30%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.selectCompany img {
+  padding: 50px;
+}
+
+.selectCompany .companyDetails {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-top: 50px;
+  margin-bottom: 20px;
+}
+
+.selectCompany .companyDetails img {
+  width: 70px;
+  height: 70px;
+  padding: 0px;
+}
+
+.selectCompany .companyDetails div {
+  margin-left: 20px;
+}
+
+.selectCompany .companyDetails div p {
+  text-align: left;
+  margin-bottom: 10px;
+}
+
+.selectCompany .content p {
+  text-align: center;
+}
+
+.selectCompany .content .buttonContainer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.selectCompany .content .buttonContainer button {
+  margin-top: 15px;
+  width: 30%;
+}
+
+.selectCompany .content .oxfordText {
+  margin-bottom: 10px;
+}
+
+.selectCompany .content .terms {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.selectCompany .content .terms p {
+  text-align: left;
+  margin-left: 15px;
+}
+
+.setPhoneNumber img {
+  padding: 50px;
+}
+
+.setPhoneNumber .content p {
+  text-align: center;
+}
+
+.setPhoneNumber .content button {
+  margin-top: 15px;
+  width: 100%;
+}
+
+.setPhoneNumber .content input {
+  text-align: center;
+}
+
+.setPhoneNumber .content .oxfordText {
+  margin-bottom: 10px;
+}
+
+.signUpBody {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.signUpBody .leftSection {
+  width: 25%;
+}
+
+.signUpBody .rightSection {
+  width: 75%;
+  padding-top: 100px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.signUpBody .rightSection .content button {
+  margin-top: 15px;
+  width: 100%;
+}
+
+.signUpBody .rightSection .content .headerText {
+  margin-bottom: 15px;
+  margin-top: 5px;
+}
+
+.signupSuccess img {
+  padding: 50px;
+}
+
+.signupSuccess .content {
+  width: 30%;
+}
+
+.signupSuccess .content p {
+  text-align: center;
+}
+
+.signupSuccess .content button {
+  margin-top: 15px;
+  width: 100%;
+}
+
+.signupSuccess .content .oxfordText {
+  margin-bottom: 10px;
+}
+
+.verifyPhoneNumber img {
+  padding: 50px;
+}
+
+.verifyPhoneNumber .content p {
+  text-align: center;
+}
+
+.verifyPhoneNumber .content button {
+  margin-top: 20px;
+  width: 100%;
+  font-weight: 500;
+}
+
+.verifyPhoneNumber .content input {
+  text-align: center;
+  font-weight: 800;
+  font-size: 20px;
+  letter-spacing: 0.3em;
+}
+
+.verifyPhoneNumber .content input::-webkit-input-placeholder {
+  color: #a1a3a6;
+  letter-spacing: 0.3em;
+}
+
+.verifyPhoneNumber .content input:-ms-input-placeholder {
+  color: #a1a3a6;
+  letter-spacing: 0.3em;
+}
+
+.verifyPhoneNumber .content input::-ms-input-placeholder {
+  color: #a1a3a6;
+  letter-spacing: 0.3em;
+}
+
+.verifyPhoneNumber .content input::placeholder {
+  color: #a1a3a6;
+  letter-spacing: 0.3em;
+}
+
+.verifyPhoneNumber .content .formInput {
+  margin-top: 20px;
+}
+
+.verifyPhoneNumber .content .oxfordText {
+  margin-bottom: 15px;
+  margin-top: 15px;
+}
+
+.verifyPhoneNumber .content .topText {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.verifyPhoneNumber .content .topText div {
+  width: 100;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.verifyPhoneNumber .content .topText div p {
+  text-align: left;
+}
+/*# sourceMappingURL=styles.css.map */

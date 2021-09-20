@@ -1,0 +1,413 @@
+@import "../../../styles/colors.scss";
+
+
+.authenticated {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+
+  
+
+  .leftSection {
+    width: 25%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    .menuItem {
+      cursor: pointer;
+    }
+
+    .menuItem:hover {
+      color: rgba(143, 213, 189, 1);
+    }
+
+    .logo {
+      width: 30%;
+    }
+
+    nav {
+      padding: 20px;
+      div {
+        display: flex;
+        padding-left: 10px;
+        padding-right: 10px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+
+        img {
+          margin-right: 10px;
+        }
+      }
+    }
+
+    .user {
+      display: flex;
+      padding: 20px;
+
+      .left {
+        padding: 0px;
+
+        div {
+          background-color: rgba(155, 81, 224, 1);
+          width: 50px;
+          height: 50px;
+          border-radius: 25px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          color: white;
+        }
+      }
+
+      .right {
+        display: flex;
+        flex-direction: column;
+        padding-left: 10px;
+
+        .nameAndRole {
+          display: flex;
+          align-items: center;
+          padding: 0px;
+
+          p {
+            margin-right: 5px;
+          }
+
+          .role {
+            padding: 5px;
+            border-radius: 5px;
+          }
+        }
+
+        .company {
+          margin: 0px;
+          padding: 0px;
+          margin-top: 5px;
+          display: flex;
+          align-items: center;
+
+          img {
+            width: 10px;
+            height: 10px;
+            margin-left: 10px;
+          }
+        }
+      }
+    }
+  }
+
+  .rightSection {
+    width: 75%;
+
+    nav {
+    display: flex;
+    padding: 15px;
+    justify-content: space-between;
+    align-items: center;
+
+    .navLeft {
+      display: flex;
+      align-items: center;
+
+      img {
+        margin-right: 15px;
+      }
+
+      input {
+        border-style: none;
+        width: 40vw;
+      }
+    }
+
+    .navRight {
+      display: flex;
+      align-items: center;
+    }
+  }
+  }
+}
+
+.home {
+
+  .homeContent {
+    .homeContentTop {
+      display: flex;
+      justify-content: space-between;
+
+      div:nth-child(1) {
+          width: 30%;
+      }
+      div:nth-child(2) {
+          width: 26%;
+      }
+      
+      div:nth-child(3) {
+          width: 40%;
+      }
+
+      .balanceTable {
+          width: 100%;
+          td {
+              padding-top: 5px;
+              padding-bottom: 5px;
+          }
+
+          .amount {
+              text-align: right;
+          }
+      }
+    }
+
+    .historyTable {
+        td {
+            padding-top: 7px;
+            padding-bottom: 7px;
+        }
+
+        .amount {
+            text-align: right;
+        }
+    }
+  }
+}
+
+.people {
+
+
+  .bodyHeader {
+    display: flex;
+  }
+
+  hr {
+    margin: 0px;
+    border-style: none;
+    border-top-style: solid;
+    border-color: $gray5;
+  }
+
+  table {
+    width: 100%;
+
+    td {
+      padding: 10px;
+    }
+  }
+
+  .invite {
+    background-color: white;
+
+    .inviteBody {
+      padding: 20px;
+    }
+
+    .inviteHeader {
+      padding: 20px;
+      display: flex;
+      justify-content: space-between;
+
+      img {
+        padding: 0px;
+        cursor: pointer;
+      }
+    }
+
+    .buttonContainer {
+      display: flex;
+      justify-content: flex-end;
+    }
+  }
+
+  .personDetails {
+    background-color: white;
+    width: 40vw;
+    max-height: 90vh;
+    overflow-y: scroll;
+
+    .personDetailsHeader {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 20px;
+
+      div {
+        img {
+          margin-right: 20px;
+        }
+      }
+    }
+
+    .personDetailsUser {
+      display: flex;
+      padding-left: 20px;
+      padding-right: 20px;
+      align-items: center;
+
+      img {
+        width: 40px;
+        height: 40px;
+        border-radius: 20px;
+        object-fit: cover;
+      }
+
+      p {
+        margin-top: 0px;
+        margin-bottom: 0px;
+      }
+    }
+
+    .personalDetailsForm {
+      padding-left: 20px;
+      padding-right: 20px;
+
+      label {
+        font-size: 10px !important;
+      }
+    }
+
+    .personalDetailsBank {
+      padding: 20px;
+
+      .personalDetailsBankDetails {
+        border-style: none;
+        border-style: solid;
+        border-radius: 6px;
+        border-width: 1px;
+        border-color: rgb(231, 231, 231);
+
+        .bankHeader {
+          display: flex;
+          padding: 15px;
+        }
+
+        .bank {
+          border-style: none;
+          border-style: solid;
+          border-radius: 6px;
+          border-width: 1px;
+          border-color: rgb(231, 231, 231);
+          margin: 15px;
+
+          .bankHeader {
+            padding: 15px;
+            display: block;
+
+            div {
+              display: flex;
+            }
+          }
+
+          .bankBody {
+            display: flex;
+            background-color: rgba(249, 250, 251, 1);
+
+            div {
+              flex: 1;
+              padding: 20px;
+            }
+          }
+        }
+      }
+    }
+
+    .deleteText {
+      padding: 20px;
+      margin-top: 30px;
+      color: rgba(235, 87, 87, 1);
+      cursor: pointer;
+      display: inline;
+    }
+
+    .deleteText:hover {
+      color: rgb(160, 57, 57);
+    }
+  }
+
+  .deleteEmployee {
+    background-color: white;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    max-width: 30vw;
+    align-items: center;
+    border-radius: 6px;
+
+    img {
+      width: 40px;
+      height: 40px;
+    }
+
+    p {
+      text-align: center;
+    }
+
+    button {
+      width: 40%;
+    }
+  }
+}
+
+.profile {
+    .user {
+        display: flex;
+        
+        .placeholder {
+            width: 50px;
+            height: 50px;
+            border-radius: 25px;
+            background-color: blueviolet;
+        }
+    }
+
+
+}
+
+.headerItem {
+  div {
+    width: 70%;
+    height: 2px;
+    margin-top: 10px;
+  }
+
+  .inactiveP {
+    color: $secondary;
+  }
+
+  .inactiveDiv {
+    background-color: $secondary;
+  }
+
+  .activeP {
+    color: $brand;
+  }
+
+  .activeDiv {
+    background-color: $brand;
+  }
+}
+
+.personItem {
+  cursor: pointer;
+  transition: all 0.3s;
+
+  .personNameAndType {
+    display: flex;
+    align-items: center;
+  }
+
+  .imagePlaceholder {
+    width: 30px;
+    height: 30px;
+    border-radius: 15px;
+    background-color: $brand;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+  }
+}
+
+.personItem:hover {
+  background-color: rgb(240, 240, 240);
+}
