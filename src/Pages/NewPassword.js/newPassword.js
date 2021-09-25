@@ -6,7 +6,7 @@ import "./styles/styles.css"
 const NewPassword = () => {
     return (
         <div className="newPassword">
-            <img alt="logo" src={logo} />
+            <a href="/"><img alt="logo" src={logo} /></a>
             <div className="content">
                 <div>
                     <p className="oxfordText font24 headerText weight500">Reset your password.</p>

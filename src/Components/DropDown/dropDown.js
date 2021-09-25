@@ -2,16 +2,20 @@ import { useEffect, useRef, useState } from "react";
 import "../DropDown/styles/styles.css";
 import dropIcon from "../../Assets/img/dropIcon.svg";
 import dropIconUp from "../../Assets/img/dropIconUp.svg";
+import { capitalize } from "../../helpers/formatStrings";
 
-const DropDown = ({ label, side, type, hideLabel, placeholder, data }) => {
+const DropDown = ({ label, side, type, hideLabel, placeholder, data, onSelect, defaultValue }) => {
   const [sideLabel, setSideLabel] = useState("hide");
   const [inputType, setInputType] = useState("text");
   const [selecting, setSelecting] = useState(false);
   const [selected, setSelected] = useState("")
   const dropDownRef = useRef(null)
 
+  console.log({defaultValue});
+
   useEffect(() => {
     setInputType(type);
+
   }, []);
 
   const handleSideClick = () => {
@@ -30,14 +34,17 @@ const DropDown = ({ label, side, type, hideLabel, placeholder, data }) => {
       }
   }
 
-  const handleItemClick = (option) => {
+  const handleItemClick = (option, index) => {
       setSelected(option)
       setSelecting(false)
+      onSelect(index)
   }
 
   useEffect(() => {
       if (data.length > 1){
         setSelected(formatText(data[0]));
+      } else if (defaultValue) {
+        setSelected(capitalize(defaultValue))
       } else {
           setSelected("")
       }
@@ -81,7 +88,7 @@ const DropDown = ({ label, side, type, hideLabel, placeholder, data }) => {
         {selecting && (
           <ul>
             {data.map((item, index) => (
-              <li key={index} className="font14 oxfordText" onClick={() => handleItemClick(formatText(item))}>{formatText(item)}</li>
+              <li key={index} className="font14 oxfordText" onClick={() => handleItemClick(formatText(item), index)}>{formatText(item)}</li>
             ))}
           </ul>
         )}

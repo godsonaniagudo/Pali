@@ -2,7 +2,7 @@ import { useRef, useState } from "react";
 import { handleFileSelected } from "../../helpers/encodeFile";
 import "./styles/styles.css";
 
-const UploadArea = () => {
+const UploadArea = ({label, onFileSelect}) => {
   const fileRef = useRef(null);
   const [selectedFile, setSelectedFile] = useState(null);
 
@@ -18,11 +18,25 @@ const UploadArea = () => {
     e.preventDefault();
 
     setSelectedFile(e.dataTransfer.files[0]);
+
+    var fileReader = new FileReader();
+
+    fileReader.onload = function (fileLoadedEvent) {
+      var srcData = fileLoadedEvent.target.result; // <--- data: base64
+      onFileSelect(srcData)
+    };
+
+    fileReader.readAsDataURL(e.dataTransfer.files[0]);
   };
 
   const handleDragOver = (element) => {
     element.preventDefault();
   };
+
+  const handleRemoveFile = () => {
+    setSelectedFile(null)
+    onFileSelect("")
+  }
 
   const encodeImageFileAsURL = () => {
     var filesSelected = fileRef.current.files;
@@ -37,8 +51,7 @@ const UploadArea = () => {
 
       fileReader.onload = function (fileLoadedEvent) {
         var srcData = fileLoadedEvent.target.result; // <--- data: base64
-
-        console.log(srcData);
+        onFileSelect(srcData)
       };
 
       fileReader.readAsDataURL(fileToLoad);
@@ -47,7 +60,7 @@ const UploadArea = () => {
 
   return (
     <div className="uploadArea">
-      <label className="oxfordText weight600 font12">Caption</label>
+      <label className="oxfordText weight600 font12">{label}</label>
 
       <div
         className="mt5 uploadContent"
@@ -71,7 +84,7 @@ const UploadArea = () => {
               </p>
               <p
                 className="font12 charcoalText"
-                onClick={() => setSelectedFile(null)}
+                onClick={() => handleRemoveFile()}
               >
                 Remove
               </p>

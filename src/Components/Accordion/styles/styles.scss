@@ -1,0 +1,31 @@
+.accordion {
+  border-style: none;
+  border-style: solid;
+  border-width: 1px;
+  border-radius: 6px;
+  border-color: rgb(233, 233, 233);
+
+  header {
+    padding: 15px;
+    cursor: pointer;
+
+    .openCloseIcon {
+        width: 10px;
+    }
+
+    label {
+      position: unset;
+      margin-left: 20px;
+    }
+  }
+
+  hr {
+      padding: 0px;
+      margin: 0px;
+      border-style: none;
+      border-top-style: solid;
+      border-top-width: 1px;
+      border-top-color: rgb(233, 233, 233);
+      
+  }
+}

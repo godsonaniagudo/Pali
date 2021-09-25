@@ -12,3 +12,7 @@ export const getInitials = (name) => {
     return initials
 
 }
+
+export const capitalize = (text) => {
+    return String(text).slice(0,1).toLocaleUpperCase() + String(text).slice(1)
+}

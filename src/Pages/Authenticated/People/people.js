@@ -4,7 +4,7 @@ import Button from "../../../Components/Button/button";
 import FormInput from "../../../Components/FormInput/formInput";
 import IconButton from "../../../Components/IconButton";
 import Modal from "../../../Components/Modal/modal";
-import { getInitials } from "../../../helpers/formatStrings";
+import { capitalize, getInitials } from "../../../helpers/formatStrings";
 import close from "../../../Assets/img/closeIcon.svg"
 import up from "../../../Assets/img/icons/up.svg";
 import down from "../../../Assets/img/icons/down.svg";
@@ -12,24 +12,81 @@ import pass from "../../../Assets/img/icons/pass.svg";
 import DropDown from "../../../Components/DropDown/dropDown";
 import profileImage from "../../../Assets/img/profileImage.jpg"
 import alertIcon from "../../../Assets/img/icons/alertIcon.svg"
+import warningIcon from "../../../Assets/img/icons/warningIcon.svg"
+import Notification from "../../../Components/Notification/notification";
+import { validateEmail } from "../../../helpers/validators";
+import postProtected from "../../../helpers/requests/postProtected";
+import { useEffect } from "react";
+import getProtected from "../../../helpers/requests/getProtected";
+import React from "react";
+import deleteProtected from "../../../helpers/requests/deleteProtected";
 
-const DeleteEmployee = () => {
+const DeleteEmployee = ({user, closeModal, closeUserModal}) => {
+  const thisUser = JSON.parse(localStorage.getItem("user"))
+
+  const deleteEmployee = async () => {
+    try {
+      console.log({thisUser});
+      console.log({user});
+      if (thisUser.user.user_id !== user.user_id){
+        console.log("deleting");
+        const deleteEmployeeRequest = await deleteProtected("/employee/" + user.user_id)
+
+        if (deleteEmployeeRequest.status) {
+          closeModal()
+          closeUserModal()
+        }
+      }
+      
+    } catch (error) {
+      
+    }
+  }
+
     return (
       <div className="deleteEmployee">
+        <div className="deleteHeader">
+          <img alt="close" src={close} className="close" onClick={() => closeModal()}  />
+        </div>
         <img alt="alert" src={alertIcon} />
         <p className="oxfordText font16 mt20 weight600">
-          Are you sure you want to delete John Doe?
+          {
+            `Are you sure you want to delete ${user.name}?`
+          }
         </p>
         <p className="charcoalText font14 mt20 mb20">
           This can not be undone. Please, keep in mind that deleting this user
           will permanently destroy their cards and remove their access to Pali.
         </p>
-        <Button label="Delete" />
+        <Button label="Delete" onClick={() => {
+          deleteEmployee()
+        }} />
       </div>
     );
 }
 
-const PersonDetails = () => {
+const PersonDetails = ({user, closeModal, openDelete}) => {
+  const [employee, setEmployee] = useState({})
+
+  useEffect(() => {
+    getEmployeeDetails()
+  }, [])
+
+  const getEmployeeDetails = async () => {
+    try {
+      const getEmployeeRequest = await getProtected("/user/profile/" + user.user_id)
+
+      if (getEmployeeRequest.status){
+        var temp = {...employee}
+        temp = getEmployeeRequest.data
+        setEmployee(temp)
+      }
+    } catch (error) {
+      
+    }
+  }
+
+
     return (
       <div className="personDetails">
         <div className="personDetailsHeader">
@@ -38,7 +95,7 @@ const PersonDetails = () => {
             <img alt="down" src={down} />
           </div>
 
-          <img alt="close" src={close} />
+          <img alt="close" src={close} onClick={() => closeModal()} />
         </div>
 
         <div>
@@ -47,15 +104,15 @@ const PersonDetails = () => {
 
             <div className="personDetailsUser mt20">
               <img src="avatar" src={profileImage} />
-              <p className="font14 oxfordText ml15">Ade Doe</p>
+              <p className="font14 oxfordText ml15">{user.name}</p>
             </div>
 
             <div className="personalDetailsForm mb20">
-              <FormInput label="WORK EMAIL" />
-              <FormInput label="EMPLOYEE CODE" />
+              <FormInput label="WORK EMAIL" defaultValue={user.email}  />
+              <FormInput label="EMPLOYEE CODE" defaultValue={user.user_id} />
 
-              <FormInput label="PHONE NUMBER" />
-              <DropDown data={[]} label="ROLE" />
+              <FormInput label="PHONE NUMBER" defaultValue={user.phone} />
+              <DropDown data={[]} label="ROLE" defaultValue={user.role} />
             </div>
           </div>
 
@@ -66,17 +123,21 @@ const PersonDetails = () => {
 
             <div className="personalDetailsBankDetails mt10">
               <div className="bankHeader">
-                <img alt="valid" src={pass} className="mr10" />
+                <img alt="valid" src={employee?.counterparty?.account_name === ""  ? warningIcon : pass} className="mr10" />
                 <p className="font12 oxfordText">
-                  Ade can receive bank transfers
+                  {
+                    employee?.counterparty?.account_name === "" ? `${user.name} is not set up to receive reimbursement` : `${user.name} can receive bank transfers`
+                  }
                 </p>
               </div>
 
               <hr />
 
-              <div className="bank">
+              {
+                !employee?.counterparty?.account_name === "" && <React.Fragment>
+                  <div className="bank">
                 <div className="bankHeader">
-                  <p className="font14 oxfordText">Stanbic IBTC *****4500</p>
+                  <p className="font14 oxfordText">{employee?.counterparty?.bank_name + " " + employee?.counterparty?.account_number}</p>
                   <div>
                     <img />
                     <p className="font12 oxfordText">Active</p>
@@ -88,96 +149,186 @@ const PersonDetails = () => {
                 <div className="bankBody">
                   <div>
                     <p className="font10 secondaryColorText">BANK</p>
-                    <p className="font13 oxfordText mt10 mb20">Stanbic IBTC</p>
+                    <p className="font13 oxfordText mt10 mb20">{employee?.counterparty?.bank_name}</p>
 
                     <hr />
 
                     <p className="font10 secondaryColorText mt20">
                       ACCOUNT NAME
                     </p>
-                    <p className="font13 oxfordText mt10">Adeyemo Adedeji</p>
+                    <p className="font13 oxfordText mt10">{employee?.counterparty?.account_name}</p>
                   </div>
 
                   <div>
                     <p className="font10 secondaryColorText">ACCOUNT NUMBER</p>
-                    <p className="font13 oxfordText mt10">05111109892</p>
+                    <p className="font13 oxfordText mt10">{employee?.counterparty?.account_number}</p>
                   </div>
                 </div>
               </div>
+                </React.Fragment>
+              }
             </div>
           </div>
 
-          <p className="deleteText">Delete employee</p>
+          <p className="deleteText" onClick={() => openDelete()}>Delete employee</p>
         </div>
       </div>
     );
 }
 
-const Invite = () => {
+const Invite = ({closeModal, showNotification, onSuccess}) => {
+  const handleSubmit = (event) => {
+    event.preventDefault()
+    
+    if (event.target[0].value === ""){
+      showNotification("Please enter the employee's email addrress")
+    } else if (!validateEmail(event.target[0].value)) {
+      showNotification("Please enter a valid email address")
+    } else {
+      sendInvite(event.target[0].value)
+    }
+  }
+
+  const sendInvite = async (email) => {
+    try {
+      const sendInviteRequest = await postProtected("/invite/user", {
+        email
+      })
+      
+      if (sendInviteRequest.status){
+        onSuccess("Invite sent successfully")
+        closeModal()
+      } else {
+        showNotification(sendInviteRequest.message)
+      }
+    } catch (error) {
+      showNotification(error.message)
+    }
+  }
+
     return (
       <div className="invite">
         <div className="inviteHeader">
           <p className="oxfordText weight600">Invite A Team Member</p>
-          <img alt="close" src={close} />
+          <img alt="close" src={close} onClick={() => closeModal()} />
         </div>
 
         <hr />
 
         <div className="inviteBody">
-          <p>We’ll email them with all the details on how to get started.</p>
-          <FormInput label="Email address" />
+          <p className="oxfordText font14">We’ll email them with all the details on how to get started.</p>
+          <form onSubmit={event => handleSubmit(event)}>
+            <FormInput label="Email address" />
 
           <div className="buttonContainer mt15">
             <Button label="Send Invite" />
           </div>
+          </form>
         </div>
       </div>
     );
 }
 
 const People = () => {
-  const [people, setPeople] = useState([
-    {
-      name: "Person 1",
-      email: "person1@gmail.com",
-      type: "Account Owner",
-      team: "Management",
-      status: "Active",
-    },
-    {
-      name: "Person",
-      email: "person1@gmail.com",
-      type: "Account Owner",
-      team: "Management",
-      status: "Active",
-    },
-    {
-      name: "Person 1",
-      email: "person1@gmail.com",
-      type: "Account Owner",
-      team: "Management",
-      status: "Active",
-    },
-    {
-      name: "Person 1",
-      email: "person1@gmail.com",
-      type: "Account Owner",
-      team: "Management",
-      status: "Active",
-    },
-    {
-      name: "Person 1",
-      email: "person1@gmail.com",
-      type: "Account Owner",
-      team: "Management",
-      status: "Active",
-    },
-  ]);
+  const [showModal, setShowModal] = useState("")
+  const [showDeleteModal, setShowDeleteModal] = useState("")
+  const [people, setPeople] = useState([]);
+  const [currentUser, setCurrentUser] = useState({})
+
+    const [notification, setNotification] = useState({
+      text: "",
+      type: "",
+    });
+
+    const showNotification = (text, type) => {
+      const temp = {
+        ...notification,
+      };
+      temp["text"] = text;
+      temp["type"] = type;
+      setNotification(temp);
+    };
+
+    const closeNotification = () => {
+      const temp = {
+        ...notification,
+      };
+      temp["text"] = "";
+      temp["type"] = "";
+      setNotification(temp);
+    };
+
+  const [showAddEmployees, setShowAddEmployees] = useState(false)
+
+  const toggleAddEmployeesModal = () => {
+    if (showAddEmployees){
+      setShowAddEmployees(false)
+    } else {
+      setShowAddEmployees(true)
+    }
+  }
+
+  useEffect(() => {
+    getEmployees()
+  }, [])
+
+  const getEmployees = async () => {
+    try {
+      const getEmployeeRequest = await getProtected("/users")
+
+      if (getEmployeeRequest.status) {
+        var temp = [...people]
+        temp = getEmployeeRequest.data.users
+        setPeople(temp)
+      } else if (!getEmployeeRequest.status) {
+        showNotification(getEmployeeRequest.message, "Error")
+      }
+    } catch (error) {
+      showNotification(error.message, "Error")
+    }
+  }
+
+
   return (
     <div className="people">
-      {/* <Modal>
+      {
+        showModal === "add employees" && <Modal>
+          <Invite closeModal={() => setShowModal("")} showNotification={text => showNotification(text, "Error")} onSuccess={text => showNotification(text, "Success")} />
+      </Modal>
+      }
 
-      </Modal> */}
+      {
+        showModal === "user" && <Modal>
+          < PersonDetails user = {
+            currentUser
+          }
+          openDelete = {
+            () => setShowDeleteModal("delete employee")
+          }
+          closeModal = {
+              () => {
+            setShowModal("")
+          }} />
+        </Modal>
+      }
+
+      {
+        showDeleteModal === "delete employee" && <Modal>
+          <DeleteEmployee user={currentUser} closeModal={() => {
+            setShowDeleteModal("")
+          }} closeUserModal={() => {
+            setShowModal("")
+          }} />
+        </Modal>
+      }
+
+      {notification.text !== "" && (
+        <Notification
+          text={capitalize(notification.text)}
+          type={notification.type}
+          close={() => closeNotification()}
+        />
+      )}
       
       <nav>
         <div className="navLeft">
@@ -185,7 +336,9 @@ const People = () => {
           <input placeholder="Search Expense, Members, Reimbbursments etc." />
         </div>
         <div className="navRight mr20">
-          <p className="font13 mr10 weight600"> Add Employees </p>
+          <p className="font13 mr10 weight600 addEmployees" onClick={() => {
+            setShowModal("add employees")
+          }}> Add Employees </p>
 
           <IconButton text="New Request" />
         </div>{" "}
@@ -214,7 +367,12 @@ const People = () => {
             </tr>
 
             {people.map((item, index) => (
-              <tr key={index} className="personItem">
+              <tr key={index} className="personItem" onClick={() => {
+                setShowModal("user")
+                var temp = {...currentUser}
+                temp = item
+                setCurrentUser(temp)
+              }}>
                 <td>
                   <div className="personNameAndType">
                     <div className="imagePlaceholder font13 mr15">

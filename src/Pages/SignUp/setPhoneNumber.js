@@ -79,7 +79,7 @@ const SetPhoneNumber = () => {
             {
                 notification.text !== "" && <Notification text={notification.text} type={notification.type} close={() => closeNotification()} />
             }
-            <img alt="logo" src={logo} />
+            <a href="/"><img alt="logo" src={logo} /></a>
             <div className="content">
                 <div>
                     <p className="oxfordText font20 headerText weight500">Your phone number</p>

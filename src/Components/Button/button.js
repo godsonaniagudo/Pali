@@ -5,7 +5,9 @@ import "./styles/styles.css"
 const Button = ({label, onClick}) => {
     return (
         <button onClick={() => {
-            onClick()
+            if (onClick) {
+                onClick()
+            }
         }}>{label}</button>
     )
 }

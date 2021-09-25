@@ -6,8 +6,8 @@ const Login = () => {
     return (
         <div>
             
-            <Route path="/login-OTP" component={LoginOTP} />
-            <Route path="/" component={LoginHome} exact />
+            <Route path="/login/login-OTP" component={LoginOTP} />
+            <Route path="/login" component={LoginHome} exact />
         </div>
     )
 }

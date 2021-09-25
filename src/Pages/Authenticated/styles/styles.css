@@ -220,6 +220,10 @@
   display: flex;
 }
 
+.people .addEmployees {
+  cursor: pointer;
+}
+
 .people hr {
   margin: 0px;
   border-style: none;
@@ -341,6 +345,9 @@
   display: -ms-flexbox;
   display: flex;
   padding: 15px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .people .personDetails .personalDetailsBank .personalDetailsBankDetails .bank {
@@ -406,6 +413,22 @@
   border-radius: 6px;
 }
 
+.people .deleteEmployee .deleteHeader {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  padding: 0px;
+}
+
+.people .deleteEmployee .deleteHeader img {
+  width: 10px;
+  cursor: pointer;
+}
+
 .people .deleteEmployee img {
   width: 40px;
   height: 40px;
@@ -419,6 +442,61 @@
   width: 40%;
 }
 
+.profile label {
+  color: rgba(136, 120, 128, 0.6);
+  font-size: 10px;
+}
+
+.profile .borderedArea {
+  width: 40vw;
+  background-color: white;
+  padding: 0px;
+}
+
+.profile .borderedArea hr {
+  border-style: none;
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-top-color: #e0e0e0;
+}
+
+.profile .borderedArea header {
+  padding: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.profile .borderedArea header p {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.profile .borderedArea header img {
+  cursor: pointer;
+}
+
+.profile .borderedArea .top .formInput {
+  width: 48%;
+}
+
+.profile .borderedArea .formInput {
+  width: 100%;
+}
+
+.profile .borderedArea .dropDown {
+  width: 48%;
+  height: 100%;
+}
+
+.profile .borderedArea .dropDown p {
+  padding: 8px;
+}
+
+.profile .borderedArea hr {
+  margin: 0px;
+}
+
 .profile .user {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -430,6 +508,24 @@
   height: 50px;
   border-radius: 25px;
   background-color: blueviolet;
+}
+
+.profile form .formInput {
+  width: 43%;
+  margin-right: 20px;
+}
+
+.profile .security .formInput {
+  width: 50%;
+}
+
+.profile .bankDetails .formInput {
+  width: 43%;
+  margin-right: 20px;
+}
+
+.profile .bankDetails .numberInput {
+  width: 43%;
 }
 
 .headerItem div {

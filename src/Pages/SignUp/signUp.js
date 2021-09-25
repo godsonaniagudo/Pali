@@ -73,7 +73,9 @@ const SignUpHome = () => {
         />
       )}
       <section className="leftSection fullHeight backgroundBrand">
-        <img alt="logo" src={logo} />
+        <a href="/">
+          <img alt="logo" src={logo} />
+        </a>
       </section>
 
       <section className="rightSection fullHeight">
@@ -94,7 +96,7 @@ const SignUpHome = () => {
 
             <FormInput label="Company email address" type="email" />
 
-            <FormInput label="Create Password" side type="password" />
+            <FormInput label="Create Password" side="show" type="password" />
 
             <Button label="Continue" />
           </form>

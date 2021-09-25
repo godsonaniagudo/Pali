@@ -4,23 +4,28 @@ import logo from "../../Assets/img/logoPlain.svg"
 import companyLogo from "../../Assets/img/companyIcon.svg"
 import "./styles/styles.css"
 import {
+    useEffect,
     useState
 } from "react"
+import { useHistory, useLocation } from "react-router"
 
 const SignUpSuccess = () => {
-    const [companyDetails, setCompanyDetails] = useState({
-        companyName : "Paribus Limited",
-        companyAddress: "Unit 20 , William James House, Cowley Road, CB4 0WX Cambridge",
-        companyRegNo: "RC 03600013"
-    })
+    const location = useLocation()
+    const history = useHistory()
+
+    if (!location?.state?.email) {
+        history.push("/signup")
+    }
 
     return (
         <div className="signupSuccess">
-            <img alt="logo" src={logo} />
+            <a href="/"><img alt="logo" src={logo} /></a>
             <div className="content">
                 <div>
                     <p className="oxfordText font20 headerText weight500">Check your email</p>
-                    <p className="charcoalText font14">We have sent you an email at dev@getpali.co with link that will sign you into Pali</p>
+                    {
+                        location?.state?.email && <p className="charcoalText font14">We have sent you an email at {location.state.email} with a link that will sign you into Pali</p>
+                    }
                 </div>
 
                 <Button label="I did not receive my email" />

@@ -16,6 +16,24 @@
   margin-bottom: 20px;
 }
 
+.selectCompany .companyDetails .companyInitials {
+  background: #8fd5bd;
+  width: 50px;
+  height: 50px;
+  border-radius: 25px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: white;
+  font-weight: 600;
+}
+
 .selectCompany .companyDetails img {
   width: 70px;
   height: 70px;

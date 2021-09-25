@@ -1,0 +1,17 @@
+.verifyEmail {
+    .content {
+        width: 40%;
+        margin-left: auto;
+        margin-right: auto;
+        
+        div {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            img {
+                width: 50px;
+            }
+        }
+    }
+}

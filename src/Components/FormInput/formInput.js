@@ -9,6 +9,7 @@ const FormInput = ({
   placeholder,
   onChange,
   max,
+  defaultValue
 }) => {
   const [sideLabel, setSideLabel] = useState("show");
   const [inputType, setInputType] = useState("text");
@@ -39,15 +40,28 @@ const FormInput = ({
                 : "password"
               : inputType
           }
+          defaultValue={defaultValue ? defaultValue : ""}
           onChange={(event) => (onChange ? onChange(event.target.value) : {})}
         />
-        {side && (
+
+        {(type === "password" && side === "show") && (
           <span
             onClick={() => {
               handleSideClick();
             }}
           >
             {sideLabel}
+          </span>
+        )}
+
+        {side !== undefined && side !== "show" && (
+          <span
+          className="linkText"
+            onClick={() => {
+              handleSideClick();
+            }}
+          >
+            {side}
           </span>
         )}
       </div>
