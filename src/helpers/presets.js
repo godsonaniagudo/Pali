@@ -99,9 +99,5 @@ export const authenticatedMenu = [{
         path: "/vendors",
         icon: vendorsIcon
     },
-    {
-        name: "Settings",
-        path: "/settings",
-        icon: settingsIcon
-    }
+
 ]

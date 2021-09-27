@@ -4,6 +4,13 @@
   margin-right: auto;
 }
 
+.codeEntry input {
+  text-align: center !important;
+  font-size: 18px;
+  font-weight: bold;
+  letter-spacing: 4px;
+}
+
 .forgotPassword img {
   padding: 50px;
 }

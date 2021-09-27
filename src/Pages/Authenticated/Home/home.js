@@ -131,8 +131,8 @@ const Home = () => {
             <tbody>
               {history.map((item, index) => (
                 <tr key={index}>
-                  <td className="font14 oxfordText">{item.date}</td>
-                  <td className="font14 oxfordText">{item.status}</td>
+                  <td className="font14 oxfordText cell1">{item.date}</td>
+                  <td className="font14 oxfordText cell2">{item.status}</td>
                   <td className="font14 oxfordText amount">{item.amount}</td>
                 </tr>
               ))}

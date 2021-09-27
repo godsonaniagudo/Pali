@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useHistory } from "react-router";
-import logo from "../../Assets/img/logoPlain.svg";
+import logo from "../../Assets/img/paliOrange.svg";
 import Button from "../../Components/Button/button";
 import FormInput from "../../Components/FormInput/formInput";
 import Notification from "../../Components/Notification/notification";
@@ -74,7 +74,7 @@ const LoginHome = () => {
       <nav>
         <a href="/"><img alt="logo" src={logo} /></a>
         <p className="font14">
-          Don't have an account?
+          Don't have an account? &nbsp;
           <a className="linkText" href="/signup">
             Get started for free
           </a>
@@ -82,7 +82,7 @@ const LoginHome = () => {
       </nav>
 
       <div className="content">
-        <p className="oxfordText font24 headerText weight500 centerText">
+        <p className="oxfordText font24 headerText weight500 centerText mb20">
           Welcome Back!
         </p>
 
@@ -95,7 +95,9 @@ const LoginHome = () => {
 
           <FormInput label="Password" type="password" />
 
-          <Button label="SIGN IN" />
+          <div className="mt5">
+            <Button label="SIGN IN" />
+          </div>
 
           <div className="mt15 ">
             <a className="underlined" href="/forgot-password">

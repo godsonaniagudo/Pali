@@ -110,14 +110,31 @@
 }
 
 .signUpBody .leftSection {
-  width: 25%;
+  width: 400px;
 }
 
 .signUpBody .rightSection {
-  width: 75%;
-  padding-top: 100px;
+  width: 966px;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
+}
+
+.signUpBody .rightSection .content {
+  width: 400px;
+  margin-top: 115px;
+}
+
+.signUpBody .rightSection .content .names {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.signUpBody .rightSection .content .names .formInput {
+  width: 192px;
 }
 
 .signUpBody .rightSection .content button {

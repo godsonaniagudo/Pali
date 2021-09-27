@@ -29,7 +29,7 @@ const DeleteEmployee = ({user, closeModal, closeUserModal}) => {
       console.log({thisUser});
       console.log({user});
       if (thisUser.user.user_id !== user.user_id){
-        console.log("deleting");
+
         const deleteEmployeeRequest = await deleteProtected("/employee/" + user.user_id)
 
         if (deleteEmployeeRequest.status) {

@@ -84,7 +84,7 @@ const SignUpHome = () => {
           <p className="oxfordText font20 headerText weight500">
             Welcome to the future of corporate spend
           </p>
-          <p className="charcoalText font14">
+          <p className="charcoalText font14 mt10 mb20">
             Let's start by opening your account.
           </p>
           <form onSubmit={(event) => handleSubmit(event)}>

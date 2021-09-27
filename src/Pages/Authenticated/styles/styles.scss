@@ -6,11 +6,16 @@
   display: flex;
 
   .leftSection {
-    width: 25%;
+    width: 250px;
     height: 100%;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    box-sizing: border-box;
+
+    hr {
+      color: rgba(59, 70, 100, 1);
+    }
 
     .menuItem {
       cursor: pointer;
@@ -21,17 +26,20 @@
     }
 
     .logo {
-      width: 30%;
+      width: 37.47px;
+      height: 31.2px;
+      margin-left: 41.27px;
+      margin-top: 24.77px;
     }
 
     nav {
       padding: 20px;
       div {
         display: flex;
-        padding-left: 10px;
-        padding-right: 10px;
-        padding-top: 10px;
-        padding-bottom: 10px;
+        height: 20px;
+        align-items: center;
+        margin-top: 12px;
+        margin-bottom: 12px;
 
         img {
           margin-right: 10px;
@@ -73,8 +81,11 @@
           }
 
           .role {
-            padding: 5px;
+            padding-left: 3px;
+            padding-right: 3px;
             border-radius: 5px;
+            flex-grow: 1;
+            white-space: nowrap;
           }
         }
 
@@ -96,7 +107,9 @@
   }
 
   .rightSection {
-    width: 75%;
+    overflow: scroll;
+    width: 1116px;
+    box-sizing: border-box;
 
     nav {
       display: flex;
@@ -133,21 +146,21 @@
       justify-content: space-between;
 
       div:nth-child(1) {
-        width: 30%;
+        width: 350px;
       }
       div:nth-child(2) {
         width: 26%;
       }
 
       div:nth-child(3) {
-        width: 40%;
+        width: 408px;
       }
 
       .balanceTable {
         width: 100%;
         td {
-          padding-top: 5px;
-          padding-bottom: 5px;
+          padding-top: 13px;
+          padding-bottom:13px;
         }
 
         .amount {
@@ -157,9 +170,13 @@
     }
 
     .historyTable {
+      width: 100%;
+      .cell1 {
+        width: 250px;
+      }
       td {
-        padding-top: 7px;
-        padding-bottom: 7px;
+        padding-top: 13px;
+        padding-bottom: 13px;
       }
 
       .amount {

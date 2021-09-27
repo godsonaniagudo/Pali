@@ -7,7 +7,7 @@
 }
 
 .authenticated .leftSection {
-  width: 25%;
+  width: 250px;
   height: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -19,6 +19,12 @@
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.authenticated .leftSection hr {
+  color: #3b4664;
 }
 
 .authenticated .leftSection .menuItem {
@@ -30,7 +36,10 @@
 }
 
 .authenticated .leftSection .logo {
-  width: 30%;
+  width: 37.47px;
+  height: 31.2px;
+  margin-left: 41.27px;
+  margin-top: 24.77px;
 }
 
 .authenticated .leftSection nav {
@@ -41,10 +50,12 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  padding-left: 10px;
-  padding-right: 10px;
-  padding-top: 10px;
-  padding-bottom: 10px;
+  height: 20px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-top: 12px;
+  margin-bottom: 12px;
 }
 
 .authenticated .leftSection nav div img {
@@ -105,8 +116,13 @@
 }
 
 .authenticated .leftSection .user .right .nameAndRole .role {
-  padding: 5px;
+  padding-left: 3px;
+  padding-right: 3px;
   border-radius: 5px;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  white-space: nowrap;
 }
 
 .authenticated .leftSection .user .right .company {
@@ -128,7 +144,10 @@
 }
 
 .authenticated .rightSection {
-  width: 75%;
+  overflow: scroll;
+  width: 1116px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
 .authenticated .rightSection nav {
@@ -181,7 +200,7 @@
 }
 
 .home .homeContent .homeContentTop div:nth-child(1) {
-  width: 30%;
+  width: 350px;
 }
 
 .home .homeContent .homeContentTop div:nth-child(2) {
@@ -189,7 +208,7 @@
 }
 
 .home .homeContent .homeContentTop div:nth-child(3) {
-  width: 40%;
+  width: 408px;
 }
 
 .home .homeContent .homeContentTop .balanceTable {
@@ -197,17 +216,25 @@
 }
 
 .home .homeContent .homeContentTop .balanceTable td {
-  padding-top: 5px;
-  padding-bottom: 5px;
+  padding-top: 13px;
+  padding-bottom: 13px;
 }
 
 .home .homeContent .homeContentTop .balanceTable .amount {
   text-align: right;
 }
 
+.home .homeContent .historyTable {
+  width: 100%;
+}
+
+.home .homeContent .historyTable .cell1 {
+  width: 250px;
+}
+
 .home .homeContent .historyTable td {
-  padding-top: 7px;
-  padding-bottom: 7px;
+  padding-top: 13px;
+  padding-bottom: 13px;
 }
 
 .home .homeContent .historyTable .amount {

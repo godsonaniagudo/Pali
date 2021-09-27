@@ -4,7 +4,7 @@
   top: 20px;
   width: 25vw;
   border-style: none;
-  border-radius: 6px;
+  border-radius: 4px;
   overflow: hidden;
   background-color: white;
   z-index: 500;
@@ -21,11 +21,13 @@
     img {
       cursor: pointer;
       padding: 0px;
+      width: 10px;
+      height: 10px;
     }
   }
 
   .notificationShade {
-    height: 4px;
+    height: 6px;
   }
 }
 
