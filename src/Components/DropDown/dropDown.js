@@ -41,7 +41,7 @@ const DropDown = ({ label, side, type, hideLabel, placeholder, data, onSelect, d
   useEffect(() => {
       if (!placeholder){
         if (data.length > 1) {
-          setSelected(formatText(data[0].name));
+          setSelected(formatText(data[0].name ? data[0].name : data[0]));
         } else if (defaultValue) {
           setSelected(capitalize(defaultValue))
         } else {
