@@ -1,5 +1,7 @@
-div {
+.formInput {
     box-sizing: border-box;
+    height: 40px;
+
     label {
         margin: 0px;
         position: relative;
@@ -22,10 +24,12 @@ div {
         display: flex;
         align-items: center;
         overflow: hidden;
+        height: 100%;
+
 
 
         input {
-            height: 52px;
+            
             flex-grow: 1;
             border-style: none;
             border-radius: 6px;

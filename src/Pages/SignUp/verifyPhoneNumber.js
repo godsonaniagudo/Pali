@@ -134,7 +134,7 @@ const VerifyPhoneNumber = () => {
                 location.state.phone.length
               )}.
             Please enter the code.`}
-              <span className="linkText font14">
+              <span className="linkText font14" onClick={() => history.goBack()}>
                 Use a different phone number
               </span>
             </p>

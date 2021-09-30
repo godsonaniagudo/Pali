@@ -4,6 +4,45 @@
           box-sizing: border-box;
 }
 
+.dropDown .imageListItem {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding-left: 30px !important;
+  padding-right: 30px !important;
+  padding-top: 15px !important;
+  padding-bottom: 15px !important;
+}
+
+.dropDown .imageListItem .icon {
+  width: 24px;
+  height: 24px;
+  border-radius: 12px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: #8fd5bd;
+  margin-right: 16px;
+}
+
+.dropDown .imageListItem .icon p {
+  font-size: 10px;
+  color: white;
+}
+
+.dropDown .imageListItem:hover {
+  background-color: #ebebeb;
+}
+
 .dropDown label {
   margin: 0px;
   position: relative;
@@ -66,7 +105,9 @@
       -ms-flex-align: center;
           align-items: center;
   overflow: hidden;
-  padding: 15px;
+  height: 43px;
+  padding-left: 16px;
+  padding-right: 16px;
 }
 
 .dropDown .dropDownContainer p {

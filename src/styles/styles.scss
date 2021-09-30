@@ -34,12 +34,27 @@ p {
     background-color: $brand;
 }
 
+.blueLink {
+    color: $themeBlue;
+    cursor: pointer;
+}
+
+.blueLinkUnderlined {
+    color: $themeBlue;
+    cursor: pointer;
+    text-decoration: underline;
+}
+
 .centerText {
     text-align: center;
 }
 
 .charcoalText {
     color: $charcoal;
+}
+
+.cursorPointer {
+    cursor: pointer;
 }
 
 .displayBlock {
@@ -67,12 +82,20 @@ p {
     align-items: center;
 }
 
+.flexGrow1 {
+    flex-grow: 1;
+}
+
 .flexJustifyBetween {
     justify-content: space-between;
 }
 
 .flexJustifyCenter {
     justify-content: center;
+}
+
+.flexJustifyEnd {
+    justify-content: flex-end;
 }
 
 .font8 {
@@ -133,6 +156,10 @@ p {
     height: 100%;
 }
 
+.grayBG {
+    background-color: $gray;
+}
+
 .greyText1 {
     color: $greyText1;
 }
@@ -146,6 +173,10 @@ p {
     margin-bottom: 5px;
 }
 
+.mb8 {
+    margin-bottom: 8px;
+}
+
 .mb10 {
     margin-bottom: 10px;
 }
@@ -154,8 +185,16 @@ p {
     margin-bottom: 15px;
 }
 
+.mb16 {
+    margin-bottom: 16px;
+}
+
 .mb20 {
     margin-bottom: 20px;
+}
+
+.mb24 {
+    margin-bottom: 24px;
 }
 
 .mb30 {
@@ -174,8 +213,16 @@ p {
     margin-left: 15px;
 }
 
+.ml16 {
+    margin-left: 16px;
+}
+
 .ml20 {
     margin-left: 20px;
+}
+
+.ml24 {
+    margin-left: 24px;
 }
 
 .ml30 {
@@ -194,8 +241,16 @@ p {
     margin-right: 15px;
 }
 
+.mr16 {
+    margin-right: 16px;
+}
+
 .mr20 {
     margin-right: 20px;
+}
+
+.mr24 {
+    margin-right: 24px;
 }
 
 .mr30 {
@@ -214,8 +269,16 @@ p {
     margin-top: 15px;
 }
 
+.mt16 {
+    margin-top: 16px;
+}
+
 .mt20 {
     margin-top: 20px;
+}
+
+.mt24 {
+    margin-top: 24px;
 }
 
 .mt30 {
@@ -234,8 +297,16 @@ p {
     padding: 15px;
 }
 
+.p16 {
+    padding: 16px;
+}
+
 .p20 {
     padding: 20px;
+}
+
+.p24 {
+    padding: 24px;
 }
 
 .p30 {
@@ -371,6 +442,5 @@ p {
 .weight800 {
     font-weight: 800;
 }
-
 
 

@@ -2,16 +2,14 @@ import { useEffect, useRef, useState } from "react";
 import "../DropDown/styles/styles.css";
 import dropIcon from "../../Assets/img/dropIcon.svg";
 import dropIconUp from "../../Assets/img/dropIconUp.svg";
-import { capitalize } from "../../helpers/formatStrings";
+import { capitalize, getInitials } from "../../helpers/formatStrings";
 
-const DropDown = ({ label, side, type, hideLabel, placeholder, data, onSelect, defaultValue }) => {
+const DropDown = ({ label, side, type, hideLabel, placeholder, data, onSelect, defaultValue}) => {
   const [sideLabel, setSideLabel] = useState("hide");
   const [inputType, setInputType] = useState("text");
   const [selecting, setSelecting] = useState(false);
   const [selected, setSelected] = useState("")
   const dropDownRef = useRef(null)
-
-  console.log({defaultValue});
 
   useEffect(() => {
     setInputType(type);
@@ -41,12 +39,14 @@ const DropDown = ({ label, side, type, hideLabel, placeholder, data, onSelect, d
   }
 
   useEffect(() => {
-      if (data.length > 1){
-        setSelected(formatText(data[0]));
-      } else if (defaultValue) {
-        setSelected(capitalize(defaultValue))
-      } else {
+      if (!placeholder){
+        if (data.length > 1) {
+          setSelected(formatText(data[0].name));
+        } else if (defaultValue) {
+          setSelected(capitalize(defaultValue))
+        } else {
           setSelected("")
+        }
       }
   }, [])
 
@@ -81,16 +81,49 @@ const DropDown = ({ label, side, type, hideLabel, placeholder, data, onSelect, d
       {!hideLabel && <label>{label}</label>}
 
       <div className="dropDownContainer" onClick={() => {handleDropDownClick()}}>
-        <p className="font14">{selected}</p>
+        {
+          selected === "" && placeholder && <p className="font14 secondaryColorText">{placeholder}</p>
+        }
+        {
+          selected !== "" && <p className="font14">{selected}</p>
+        }
         <img alt="drop icon" src={selecting ? dropIconUp : dropIcon} />
       </div>
       <div className="listContainer" ref={dropDownRef}>
         {selecting && (
-          <ul>
+          <div>
+            {
+              !type && <ul>
             {data.map((item, index) => (
               <li key={index} className="font14 oxfordText" onClick={() => handleItemClick(formatText(item), index)}>{formatText(item)}</li>
             ))}
           </ul>
+            }
+
+
+            {
+              type === "image list" && <ul>
+            {data.map((item, index) => (
+              <li key = {
+                index
+              }
+              className = "font14 oxfordText imageListItem pt10 pb10 pl30 pr30"
+              onClick = {
+                () => handleItemClick(item.name, index)
+              } >
+                <div className="icon">
+                  <p>{getInitials(item.name)}</p>
+                </div>
+                <p className="font14 oxfordText">{item.name}</p>
+              </li>
+            ))}
+          </ul>
+            }
+          </div>
+
+
+
+
         )}
       </div>
     </div>

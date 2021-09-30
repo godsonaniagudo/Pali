@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import "../FormInput/styles/styles.css";
 
 const NumberInput = ({
@@ -9,13 +9,19 @@ const NumberInput = ({
   placeholder,
   onChange,
   max,
+  defaultValue
 }) => {
   const [sideLabel, setSideLabel] = useState("show");
     const [number, setNumber] = useState("")
   const [inputType, setInputType] = useState("text");
+  const inputRef = useRef(null)
 
   useEffect(() => {
     setInputType(type);
+    if (defaultValue){
+      inputRef.current.value = defaultValue
+    }
+
   }, []);
 
   const handleSideClick = () => {
@@ -34,8 +40,9 @@ const NumberInput = ({
         <input
           placeholder={placeholder}
           type="number"
-          value={number}
+          ref={inputRef}
           onChange={(event) => {
+            console.log(event.target.value);
               if (String(event.target.value).length <= max){
                   setNumber(event.target.value)
                   if (onChange) {

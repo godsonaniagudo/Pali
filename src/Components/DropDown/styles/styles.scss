@@ -1,7 +1,36 @@
 .dropDown {
     position: relative;
-
     box-sizing: border-box;
+
+    .imageListItem {
+      display: flex;
+      align-items: center;
+      padding-left: 30px !important;
+      padding-right: 30px !important;
+      padding-top: 15px!important;
+      padding-bottom: 15px !important;
+
+      .icon {
+        width: 24px;
+        height: 24px;
+        border-radius: 12px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: rgba(143, 213, 189, 1);
+        margin-right: 16px;
+
+        p {
+          font-size: 10px;
+          color: white;
+        }
+      }
+    }
+
+    .imageListItem:hover {
+      background-color: rgb(235, 235, 235);
+    }
+
     label {
       margin: 0px;
       position: relative;
@@ -58,7 +87,9 @@
       justify-content: space-between;
       align-items: center;
       overflow: hidden;
-      padding: 15px;
+      height: 43px;
+      padding-left: 16px;
+      padding-right: 16px;
 
       p {
           margin: 0px;

@@ -4,7 +4,7 @@ import openIcon from "../../Assets/img/dropIcon.svg"
 import closeIcon from "../../Assets/img/dropIconUp.svg"
 import { useEffect, useState } from "react"
 
-const Accordion = ({status, children}) => {
+const Accordion = ({status, children, label}) => {
     const [open, setOpen] = useState(false)
 
     useEffect(() => {
@@ -24,14 +24,14 @@ const Accordion = ({status, children}) => {
             <header className="displayFlex flexAlignCenter flexJustifyBetween" onClick={() => toggleAccordion()}>
                 <div className="displayFlex flexAlignCenter">
                     <img alt="accordion" src={accordionIcon} />
-                    <label>Accordion</label>
+                    <label>{label}</label>
                 </div>
                 <img className="openCloseIcon" alt="open or close icon" src={open ? closeIcon : openIcon} />
             </header>
             {
                 open && <hr />
             }
-            <div>
+            <div className="accordionContent">
                 {
                     open && children
                 }

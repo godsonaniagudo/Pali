@@ -220,7 +220,7 @@ const Invite = ({closeModal, showNotification, onSuccess}) => {
           <form onSubmit={event => handleSubmit(event)}>
             <FormInput label="Email address" />
 
-          <div className="buttonContainer mt15">
+          <div className="buttonContainer mt15 buttonContainer">
             <Button label="Send Invite" />
           </div>
           </form>
@@ -344,7 +344,7 @@ const People = () => {
         </div>{" "}
       </nav>
       <div className="body">
-        <h1> People </h1>
+        <h1 className="weight500 oxfordText font20"> People </h1>
 
         <div className="bodyHeader">
           <span>
@@ -379,14 +379,14 @@ const People = () => {
                       {getInitials(item.name)}
                     </div>
                     <div>
-                      <p className="font14 weight600 oxfordText">{item.name}</p>
-                      <p className="font13 secondaryColorText">{item.type}</p>
+                      <p className="font14 weight500 oxfordText">{item.name}</p>
+                      <p className="font13 secondaryColorText mt5">{capitalize(item.role)}</p>
                     </div>
                   </div>
                 </td>
                 <td className="oxfordText">{item.email}</td>
                 <td className="oxfordText">{item.team}</td>
-                <td className="oxfordText">{item.status}</td>
+                <td className="oxfordText">{capitalize(item.status)}</td>
               </tr>
             ))}
           </tbody>

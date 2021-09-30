@@ -1,9 +1,10 @@
-div {
+.formInput {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
+  height: 40px;
 }
 
-div label {
+.formInput label {
   margin: 0px;
   position: relative;
   top: 10px;
@@ -16,7 +17,7 @@ div label {
   font-size: 12px;
 }
 
-div .formInputContainer {
+.formInput .formInputContainer {
   border-style: none;
   border-style: solid;
   border-width: 1.5px;
@@ -29,10 +30,10 @@ div .formInputContainer {
       -ms-flex-align: center;
           align-items: center;
   overflow: hidden;
+  height: 100%;
 }
 
-div .formInputContainer input {
-  height: 52px;
+.formInput .formInputContainer input {
   -webkit-box-flex: 1;
       -ms-flex-positive: 1;
           flex-grow: 1;
@@ -42,11 +43,11 @@ div .formInputContainer input {
   padding-right: 20px;
 }
 
-div .formInputContainer input:active {
+.formInput .formInputContainer input:active {
   background: transparent;
 }
 
-div .formInputContainer span {
+.formInput .formInputContainer span {
   margin-left: 20px;
   margin-right: 20px;
   font-size: 10px;

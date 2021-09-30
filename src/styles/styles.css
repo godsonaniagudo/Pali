@@ -32,12 +32,27 @@ p {
   background-color: #8FD5BD;
 }
 
+.blueLink {
+  color: #2f80ed;
+  cursor: pointer;
+}
+
+.blueLinkUnderlined {
+  color: #2f80ed;
+  cursor: pointer;
+  text-decoration: underline;
+}
+
 .centerText {
   text-align: center;
 }
 
 .charcoalText {
   color: rgba(0, 29, 74, 0.7);
+}
+
+.cursorPointer {
+  cursor: pointer;
 }
 
 .displayBlock {
@@ -73,6 +88,12 @@ p {
           align-items: center;
 }
 
+.flexGrow1 {
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+}
+
 .flexJustifyBetween {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
@@ -83,6 +104,12 @@ p {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+}
+
+.flexJustifyEnd {
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
 }
 
 .font8 {
@@ -143,6 +170,10 @@ p {
   height: 100%;
 }
 
+.grayBG {
+  background-color: #f2f2f2;
+}
+
 .greyText1 {
   color: #a1a3a6;
 }
@@ -156,6 +187,10 @@ p {
   margin-bottom: 5px;
 }
 
+.mb8 {
+  margin-bottom: 8px;
+}
+
 .mb10 {
   margin-bottom: 10px;
 }
@@ -164,8 +199,16 @@ p {
   margin-bottom: 15px;
 }
 
+.mb16 {
+  margin-bottom: 16px;
+}
+
 .mb20 {
   margin-bottom: 20px;
+}
+
+.mb24 {
+  margin-bottom: 24px;
 }
 
 .mb30 {
@@ -184,8 +227,16 @@ p {
   margin-left: 15px;
 }
 
+.ml16 {
+  margin-left: 16px;
+}
+
 .ml20 {
   margin-left: 20px;
+}
+
+.ml24 {
+  margin-left: 24px;
 }
 
 .ml30 {
@@ -204,8 +255,16 @@ p {
   margin-right: 15px;
 }
 
+.mr16 {
+  margin-right: 16px;
+}
+
 .mr20 {
   margin-right: 20px;
+}
+
+.mr24 {
+  margin-right: 24px;
 }
 
 .mr30 {
@@ -224,8 +283,16 @@ p {
   margin-top: 15px;
 }
 
+.mt16 {
+  margin-top: 16px;
+}
+
 .mt20 {
   margin-top: 20px;
+}
+
+.mt24 {
+  margin-top: 24px;
 }
 
 .mt30 {
@@ -244,8 +311,16 @@ p {
   padding: 15px;
 }
 
+.p16 {
+  padding: 16px;
+}
+
 .p20 {
   padding: 20px;
+}
+
+.p24 {
+  padding: 24px;
 }
 
 .p30 {
