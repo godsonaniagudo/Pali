@@ -78,6 +78,10 @@ p {
     align-items: center;
 }
 
+.flexColumn {
+    flex-direction: column;
+}
+
 .flexAlignCenter {
     align-items: center;
 }
@@ -96,6 +100,10 @@ p {
 
 .flexJustifyEnd {
     justify-content: flex-end;
+}
+
+.flexRow {
+    flex-direction: row;
 }
 
 .font8 {
@@ -413,6 +421,10 @@ p {
 
 .stateBackground  {
     background-color: $state;
+}
+
+.textCenter {
+    text-align: center;
 }
 
 .underlined {

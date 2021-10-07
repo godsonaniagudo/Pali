@@ -1,0 +1,233 @@
+.addCustomTagModal {
+  background-color: white;
+  width: 550px;
+  min-height: 85vh;
+  padding-bottom: 20px;
+  overflow-y: scroll;
+}
+
+.addCustomTagModal header {
+  height: 50px;
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
+.addCustomTagModal hr {
+  margin: 0px;
+  border-style: none;
+  border-top-style: solid;
+  border-top-color: #e9e9e9;
+  border-top-width: 1px;
+}
+
+.addCustomTagModal .body {
+  padding-left: 30px;
+  padding-right: 50px;
+}
+
+.addCustomTagModal .body .title {
+  margin-top: 43px;
+}
+
+.addCustomTagModal .body button {
+  width: 164px;
+  height: 40px;
+}
+
+.categories {
+  width: 1000px;
+  border-style: none;
+  border-style: solid;
+  border-width: 1px;
+  border-radius: 7px;
+  padding-top: 12px;
+  padding-left: 30px;
+  padding-right: 30px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  border-color: rgba(199, 199, 199, 0.25);
+}
+
+.categories .drop {
+  width: 12px;
+  height: 7px;
+  margin-right: 21px;
+  cursor: pointer;
+}
+
+.categories .icon {
+  width: 18.33px;
+  height: 15px;
+  margin-right: 18.33px;
+}
+
+.categories .addIcon {
+  width: 20px;
+  height: 20px;
+  margin-right: 18.33px;
+}
+
+.categories input {
+  border-style: none;
+}
+
+.categories .delete {
+  width: 10px;
+  height: 10px;
+  cursor: pointer;
+}
+
+.categories .categoryItem {
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+.categories .options {
+  position: relative;
+}
+
+.categories .options div {
+  position: absolute;
+  top: 105%;
+  right: 0;
+  padding: 10px;
+  width: 60px;
+  border-radius: 10px;
+  background-color: white;
+  box-shadow: 0px 1px 4px 0px rgba(191, 191, 191, 0.5);
+  -webkit-box-shadow: 0px 1px 4px 0px rgba(191, 191, 191, 0.5);
+  -moz-box-shadow: 0px 1px 4px 0px rgba(191, 191, 191, 0.5);
+  z-index: 200;
+  cursor: pointer;
+}
+
+.categories .options div:hover {
+  background-color: #f1f1f1;
+}
+
+.customTags .bodyText {
+  width: 950px;
+}
+
+.customTags .addTag {
+  width: 1000px;
+  height: 50px;
+  padding-left: 24px;
+  cursor: pointer;
+  border-style: none;
+  border-style: solid;
+  border-width: 1px;
+  border-radius: 7px;
+  border-color: #e9e9e9;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.customTags .addTag img {
+  width: 20px;
+  height: 20px;
+  margin-right: 18px;
+}
+
+.customTags .addTag:hover {
+  background-color: #f8f8f8;
+}
+
+.customTags .customFieldsItem {
+  width: 1000px;
+  border-style: none;
+  border-style: solid;
+  border-width: 1px;
+  border-radius: 7px;
+  margin-bottom: 24px;
+  border-color: #e9e9e9;
+}
+
+.customTags .customFieldsItem .optionsContainer {
+  position: relative;
+}
+
+.customTags .customFieldsItem .optionsContainer .options {
+  position: absolute;
+  display: block;
+  right: 0px;
+  top: 10px;
+  width: 200px;
+  background-color: white;
+  padding-left: 18px;
+  padding-top: 24px;
+  padding-bottom: 8px;
+  box-shadow: 0px 0px 5px 0px rgba(227, 227, 227, 0.75);
+  -webkit-box-shadow: 0px 0px 5px 0px rgba(227, 227, 227, 0.75);
+  -moz-box-shadow: 0px 0px 5px 0px rgba(227, 227, 227, 0.75);
+  border-radius: 10px;
+  z-index: 200;
+}
+
+.customTags .customFieldsItem .optionsContainer .options label {
+  display: block;
+  margin-bottom: 16px;
+}
+
+.customTags .customFieldsItem header {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.customTags .customFieldsItem header p {
+  height: 50px;
+  padding-left: 24px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  cursor: pointer;
+  color: #8fd5bd;
+}
+
+.customTags .customFieldsItem header .optionsContainer {
+  padding-left: 24px;
+  padding-right: 24px;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  cursor: pointer;
+}
+
+.customTags .customFieldsItem .body hr {
+  margin: 0px;
+  border-style: none;
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-top-color: #e9e9e9;
+}
+
+.customTags .customFieldsItem .body div {
+  padding-left: 24px;
+  padding-right: 24px;
+  padding-top: 24px;
+}
+
+.customTags .customFieldsItem .body div p {
+  padding-bottom: 24px;
+}
+
+.dropDownContainer img {
+  margin-left: auto;
+}
+/*# sourceMappingURL=styles.css.map */

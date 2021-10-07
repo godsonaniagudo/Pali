@@ -1,0 +1,14 @@
+.deleteModal {
+    width: 416px;
+    background-color: white;
+    padding: 30px;
+    border-radius: 7px;
+
+    .close {
+        cursor: pointer;
+    }
+
+    button {
+        width: 130px;
+    }
+}

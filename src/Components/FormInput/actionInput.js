@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react";
 import "../FormInput/styles/styles.css";
+import closeIcon from "../../Assets/img/closeIcon.svg";
 
-const FormInput = ({
+const ActionInput = ({
   label,
   side,
   type,
@@ -10,8 +11,7 @@ const FormInput = ({
   onChange,
   max,
   defaultValue,
-  disabled,
-  rate
+  action
 }) => {
   const [sideLabel, setSideLabel] = useState("show");
   const [inputType, setInputType] = useState("text");
@@ -32,12 +32,9 @@ const FormInput = ({
     <div className="formInput">
       {!hideLabel && <label>{label}</label>}
 
-      < div className = {
-        `formInputContainer ${disabled && `disabled`}`
-      } >
+      <div className="formInputContainer">
         <input
           placeholder={placeholder}
-          disabled={disabled}
           type={
             inputType === "password"
               ? sideLabel === "hide"
@@ -49,37 +46,19 @@ const FormInput = ({
           onChange={(event) => (onChange ? onChange(event.target.value) : {})}
         />
 
-        {(type === "password" && side === "show") && (
-          <span
-            onClick={() => {
-              handleSideClick();
-            }}
-          >
-            {sideLabel}
-          </span>
-        )}
-
-        {side === "rate" && (
-          <span
-          className="secondaryText"
-          >
-            {rate}
-          </span>
-        )}
-
-        {(side !== undefined && side !== "show" && side !== "rate") && (
-          <span
-          className="linkText"
-            onClick={() => {
-              handleSideClick();
-            }}
-          >
-            {side}
-          </span>
-        )}
+        <img
+        className="pr20 cursorPointer"
+          alt="action"
+          src={closeIcon}
+          onClick={() => {
+            if (action){
+              action();
+            }
+          }}
+        />
       </div>
     </div>
   );
 };
 
-export default FormInput;
+export default ActionInput;

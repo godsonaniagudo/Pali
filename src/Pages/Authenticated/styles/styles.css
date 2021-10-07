@@ -743,6 +743,61 @@
   color: white;
 }
 
+.policyItem {
+  padding: 20px;
+  border-style: none;
+  -webkit-box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.75);
+          box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.75);
+  box-shadow: 0px 1px 4px 0px rgba(191, 191, 191, 0.5);
+  -webkit-box-shadow: 0px 1px 4px 0px rgba(191, 191, 191, 0.5);
+  -moz-box-shadow: 0px 1px 4px 0px rgba(191, 191, 191, 0.5);
+  margin-bottom: 16px;
+}
+
+.policyItem header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.policyItem header div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.policyItem header .edit {
+  color: #828282;
+  margin-right: 16px;
+  cursor: pointer;
+}
+
+.policyItem header .delete {
+  color: #eb5757;
+  cursor: pointer;
+}
+
+.policyItem .optionsIcon {
+  width: 15px;
+  height: 15px;
+  border-radius: 7.5px;
+  background-color: #ececec;
+}
+
+.policyItem .displayFlex {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.policyItem span {
+  margin-left: 16.5px;
+  color: #eb5757;
+}
+
 .personItem:hover {
   background-color: #f0f0f0;
 }
@@ -863,6 +918,43 @@
   margin-bottom: 24px;
 }
 
+.settings .selectedApproverItem {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding-top: 10px;
+  margin-bottom: 10px;
+}
+
+.settings .selectedApproverItem div {
+  width: 32px;
+  height: 32px;
+  border-radius: 16px;
+  background-color: #8FD5BD;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 12px;
+  color: white;
+  margin-right: 12px;
+  margin-left: 40px;
+}
+
+.settings .selectedApproverItem .close {
+  margin-left: auto;
+  margin-right: 24px;
+  cursor: pointer;
+}
+
 .settings .approverItem {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -896,6 +988,8 @@
 
 .settings .newRuleModal {
   width: 550px;
+  max-height: 90vh;
+  overflow-y: scroll;
   background-color: white;
 }
 
@@ -977,5 +1071,30 @@
 
 .settings .policy .tabs .passive div {
   width: 0px;
+}
+
+.settings .mileage {
+  width: 500px;
+}
+
+.settings .mileage hr {
+  margin-top: 24px;
+  margin-bottom: 24px;
+  border-style: none;
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-top-color: #f1f1f1;
+}
+
+.settings .mileage .formInput {
+  margin-bottom: 48px;
+}
+
+.settings .mileage .formInput .formInputContainer {
+  background-color: white;
+}
+
+.settings .mileage .formInput .formInputContainer input {
+  background-color: white;
 }
 /*# sourceMappingURL=styles.css.map */

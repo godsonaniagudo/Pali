@@ -2,6 +2,10 @@
     box-sizing: border-box;
     height: 40px;
 
+    .disabled {
+        background-color: rgb(235, 235, 235);
+    }
+
     label {
         margin: 0px;
         position: relative;

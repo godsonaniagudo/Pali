@@ -1,0 +1,15 @@
+.deleteModal {
+  width: 416px;
+  background-color: white;
+  padding: 30px;
+  border-radius: 7px;
+}
+
+.deleteModal .close {
+  cursor: pointer;
+}
+
+.deleteModal button {
+  width: 130px;
+}
+/*# sourceMappingURL=styles.css.map */

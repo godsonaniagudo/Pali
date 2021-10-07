@@ -85,7 +85,7 @@ const DropDown = ({ label, side, type, hideLabel, placeholder, data, onSelect, d
           selected === "" && placeholder && <p className="font14 secondaryColorText">{placeholder}</p>
         }
         {
-          selected !== "" && <p className="font14">{selected}</p>
+          selected !== "" && <p className="font13 pl10">{selected}</p>
         }
         <img alt="drop icon" src={selecting ? dropIconUp : dropIcon} />
       </div>

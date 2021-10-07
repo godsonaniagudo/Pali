@@ -4,6 +4,10 @@
   height: 40px;
 }
 
+.formInput .disabled {
+  background-color: #ebebeb;
+}
+
 .formInput label {
   margin: 0px;
   position: relative;

@@ -1,0 +1,220 @@
+.addCustomTagModal {
+  background-color: white;
+  width: 550px;
+  min-height: 85vh;
+  padding-bottom: 20px;
+  overflow-y: scroll;
+
+  header {
+    height: 50px;
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+
+  hr {
+    margin: 0px;
+    border-style: none;
+    border-top-style: solid;
+    border-top-color: rgb(233, 233, 233);
+    border-top-width: 1px;
+  }
+
+  .body {
+    padding-left: 30px;
+    padding-right: 50px;
+
+    .title {
+      margin-top: 43px;
+    }
+
+    button {
+      width: 164px;
+      height: 40px;
+    }
+  }
+}
+
+.categories {
+  width: 1000px;
+  border-style: none;
+  border-style: solid;
+  border-width: 1px;
+  border-radius: 7px;
+  padding-top: 12px;
+  padding-left: 30px;
+  padding-right: 30px;
+  box-sizing: border-box;
+  border-color: rgba(199, 199, 199, 0.25);
+
+  .drop {
+    width: 12px;
+    height: 7px;
+    margin-right: 21px;
+    cursor: pointer;
+  }
+
+  .icon {
+    width: 18.33px;
+    height: 15px;
+    margin-right: 18.33px;
+  }
+
+  .addIcon {
+    width: 20px;
+    height: 20px;
+    margin-right: 18.33px;
+  }
+
+  input {
+    border-style: none;
+  }
+
+  .delete {
+    width: 10px;
+    height: 10px;
+    cursor: pointer;
+  }
+
+  .categoryItem {
+    margin-top: 30px;
+    margin-bottom: 30px;
+  }
+
+  .options {
+    position: relative;
+
+    div {
+      position: absolute;
+      top: 105%;
+      right: 0;
+      padding: 10px;
+      width: 60px;
+      border-radius: 10px;
+      background-color: white;
+      box-shadow: 0px 1px 4px 0px rgba(191, 191, 191, 0.5);
+      -webkit-box-shadow: 0px 1px 4px 0px rgba(191, 191, 191, 0.5);
+      -moz-box-shadow: 0px 1px 4px 0px rgba(191, 191, 191, 0.5);
+      z-index: 200;
+      cursor: pointer;
+    }
+
+    div:hover {
+      background-color: rgb(241, 241, 241);
+    }
+  }
+}
+
+.customTags {
+  .bodyText {
+    width: 950px;
+  }
+
+  .addTag {
+    width: 1000px;
+    height: 50px;
+    padding-left: 24px;
+    cursor: pointer;
+    border-style: none;
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 7px;
+    border-color: rgb(233, 233, 233);
+    transition: all 0.3s;
+    box-sizing: border-box;
+    align-items: center;
+
+    img {
+      width: 20px;
+      height: 20px;
+      margin-right: 18px;
+    }
+  }
+
+  .addTag:hover {
+    background-color: rgb(248, 248, 248);
+  }
+
+  .customFieldsItem {
+    width: 1000px;
+    border-style: none;
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 7px;
+    margin-bottom: 24px;
+    border-color: rgb(233, 233, 233);
+
+      .optionsContainer {
+    position: relative;
+
+    .options {
+      position: absolute;
+      display: block;
+      right: 0px;
+      top: 10px;
+      width: 200px;
+      background-color: white;
+      padding-left: 18px;
+      padding-top: 24px;
+      padding-bottom: 8px;
+      box-shadow: 0px 0px 5px 0px rgba(227,227,227,0.75);
+-webkit-box-shadow: 0px 0px 5px 0px rgba(227,227,227,0.75);
+-moz-box-shadow: 0px 0px 5px 0px rgba(227,227,227,0.75);
+border-radius: 10px;
+z-index: 200;
+
+      label {
+        display: block;
+        margin-bottom: 16px;
+      }
+    }
+  }
+
+    header {
+      align-items: center;
+      p {
+        height: 50px;
+        padding-left: 24px;
+        display: flex;
+        align-items: center;
+        flex-grow: 1;
+        cursor: pointer;
+        color: rgba(143, 213, 189, 1);
+      }
+
+      .optionsContainer {
+        padding-left: 24px;
+        padding-right: 24px;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+      }
+    }
+
+    .body {
+      hr {
+      margin: 0px;
+      border-style: none;
+      border-top-style: solid;
+      border-top-width: 1px;
+      border-top-color: rgb(233, 233, 233);
+    }
+
+    div {
+      padding-left: 24px;
+      padding-right: 24px;
+      padding-top: 24px;
+
+      p {
+        padding-bottom: 24px;
+      }
+    }
+    }
+  }
+}
+
+.dropDownContainer {
+  img {
+    margin-left: auto;
+  }
+}
