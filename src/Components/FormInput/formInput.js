@@ -29,11 +29,11 @@ const FormInput = ({
   };
 
   return (
-    <div className="formInput">
+    <div className={`formInput ${disabled ? `disabled`: `enabled`}`}>
       {!hideLabel && <label>{label}</label>}
 
       < div className = {
-        `formInputContainer ${disabled && `disabled`}`
+        `formInputContainer`
       } >
         <input
           placeholder={placeholder}

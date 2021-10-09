@@ -12,7 +12,10 @@ const deleteProtected = async (path, data) => {
             body: JSON.stringify(data)
         })
 
+        
+
         const response = await request.json()
+
 
         return response
     } catch (error) {

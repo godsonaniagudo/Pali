@@ -1,11 +1,7 @@
 .formInput {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  height: 40px;
-}
-
-.formInput .disabled {
-  background-color: #ebebeb;
+  height: 42px;
 }
 
 .formInput label {
@@ -56,5 +52,13 @@
   margin-right: 20px;
   font-size: 10px;
   cursor: pointer;
+}
+
+.disabled .formInputContainer {
+  background-color: #ebebeb;
+}
+
+.disabled .formInputContainer input {
+  background-color: #e7e7e7;
 }
 /*# sourceMappingURL=styles.css.map */

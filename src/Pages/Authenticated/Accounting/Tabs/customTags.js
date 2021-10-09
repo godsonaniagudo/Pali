@@ -36,7 +36,7 @@ const CustomFieldItem = ({data, editField, deleteField}) => {
               <label className="font13 oxfordText cursorPointer" onClick={() => {
                   editField();
                   toggleShowMenu()
-              }}>Edit</label>
+              }}>Add New Tag</label>
               {/* <label className="font13 oxfordText cursorPointer">Add New Tag Item</label> */}
               <label className="font13 oxfordText cursorPointer" onClick={() => {
                   deleteField()
@@ -107,7 +107,7 @@ const CustomTags = ({ showAddTagModal, editField, deleteField, fetchFields }) =>
         onClick={() => showAddTagModal()}
       >
         <img alt="add tag" src={addIcon} />
-        <p className="font14 oxfordText">Add Tag</p>
+        <p className="font14 oxfordText">Add Custom Field</p>
       </div>
     </div>
   );

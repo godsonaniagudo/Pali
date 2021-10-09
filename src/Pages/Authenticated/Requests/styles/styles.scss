@@ -1,0 +1,71 @@
+.createReimbursementModal {
+  width: 1300px;
+  height: 90vh;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+
+  .body {
+    flex-grow: 1;
+    display: flex;
+
+    .left {
+      flex-grow: 1;
+      height: 100%;
+    }
+
+    .right {
+      width: 450px;
+      height: 100%;
+      border-left-style: solid;
+      border-left-width: 1px;
+      border-left-color: rgb(226, 226, 226);
+
+      header {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        padding-right: 28.1px;
+        padding-left: 30px;
+        height: 50px;
+      }
+
+      hr {
+        margin: 0px;
+        border-style: none;
+        border-top-style: solid;
+        border-top-width: 1px;
+        border-top-color: rgb(226, 226, 226);
+      }
+
+      .bodyContent {
+          padding: 25px;
+          width: 100%;
+          box-sizing: border-box;
+      }
+    }
+  }
+
+  footer {
+    height: 80px;
+    background-color: rgba(242, 242, 242, 1);
+    padding-right: 36.72px;
+    padding-left: 36.72px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    button {
+      width: 150px;
+      height: 30px;
+      font-size: 13px;
+    }
+
+    .cancelButton {
+      width: 110.16px;
+      height: 30px;
+      background-color: white;
+    }
+  }
+}

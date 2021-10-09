@@ -16,7 +16,7 @@ const PolicyItem = ({details, editPolicy, deletePolicy}) => {
           <p className="edit font12" onClick={() => {
               editPolicy()
           }}>Edit</p>
-          <p className="delete font12" onClick={() => deletePolicy()}>Delete</p>
+          {!details.default && <p className="delete font12" onClick={() => deletePolicy()}>Delete</p>}
         </div>
       </header>
       <p className="font13 mt16 oxfordText">Approver(s)</p>
@@ -25,8 +25,8 @@ const PolicyItem = ({details, editPolicy, deletePolicy}) => {
           <div className="optionsIcon"></div>
           <p className="font14 oxfordText">
             <span className="require">Require</span>
-            {` ${item.users[0].name}`}
-            {item.users.length > 0 && item.users.slice(1).map(arrItem => ` or ${arrItem.name}`)}
+            {` ${item.users[0].user.name}`}
+            {item.users.length > 0 && item.users.slice(1).map(arrItem => ` or ${arrItem.user.name}`)}
           </p>
         </div>
       ))}
@@ -63,6 +63,8 @@ const Policy = ({
       showNotification(error.message, "Error");
     }
   };
+
+  console.log({policies});
 
   return (
     <div className="policy">

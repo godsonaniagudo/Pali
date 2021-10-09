@@ -14,6 +14,14 @@ const Mileage = ({
         fetchCategories()
     }, [])
 
+    const setDefaultCategory = async (index) => {
+        try {
+            console.log(index);
+        } catch (error) {
+            showNotification(error.message, "Error")
+        }
+    }
+
 
     const fetchCategories = async () => {
         try {
@@ -49,16 +57,14 @@ const Mileage = ({
             <p className="font14 weight400">Set Default Mileage Category</p>
             <p className="font12 secondaryColorText mt5">The multiplier that will be used to convert employee submitted mileage to the amount for reimbursement.</p>
             <DropDown label="DEFAULT CATEGORY" data={categoryNames} onSelect={index => {
-                var temp = {...selectedCategory}
-                temp = categories[index]
-                setSelectedCategory(temp)
+                setDefaultCategory(index)
             }} />
 
             <hr />
 
             <p className="font14 weight400">Settlement</p>
             <p className="font12 secondaryColorText mt5">Settlement users will be the only Users who can settle/pay for Approved Claims.</p>
-            <DropDown label="SELECT USERS" data={[]} />
+            <DropDown label="SELECT USERS" data={[]} onSelect={index => setDefaultCategory(index)} />
         </div>
     )
 }

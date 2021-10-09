@@ -30,11 +30,13 @@ const DeleteEmployee = ({user, closeModal, closeUserModal}) => {
       console.log({user});
       if (thisUser.user.user_id !== user.user_id){
 
-        const deleteEmployeeRequest = await deleteProtected("/employee/" + user.user_id)
-
+        const deleteEmployeeRequest = await deleteProtected("/employee/" + user.user_id, {})
+        console.log(deleteEmployeeRequest);
         if (deleteEmployeeRequest.status) {
           closeModal()
           closeUserModal()
+        } else {
+          console.log(deleteEmployeeRequest);
         }
       }
       
@@ -116,6 +118,9 @@ const PersonDetails = ({user, closeModal, openDelete}) => {
             </div>
           </div>
 
+          <div className="mb50"></div>
+
+
           <hr />
 
           <div className="personalDetailsBank">
@@ -134,7 +139,7 @@ const PersonDetails = ({user, closeModal, openDelete}) => {
               <hr />
 
               {
-                !employee?.counterparty?.account_name === "" && <React.Fragment>
+                employee?.counterparty?.account_name !== "" && <React.Fragment>
                   <div className="bank">
                 <div className="bankHeader">
                   <p className="font14 oxfordText">{employee?.counterparty?.bank_name + " " + employee?.counterparty?.account_number}</p>

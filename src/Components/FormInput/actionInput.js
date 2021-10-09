@@ -11,7 +11,8 @@ const ActionInput = ({
   onChange,
   max,
   defaultValue,
-  action
+  action,
+  disabled
 }) => {
   const [sideLabel, setSideLabel] = useState("show");
   const [inputType, setInputType] = useState("text");
@@ -29,12 +30,13 @@ const ActionInput = ({
   };
 
   return (
-    <div className="formInput">
+    <div className={`formInput ${disabled===true ? `disabled` : `enabled`}`}>
       {!hideLabel && <label>{label}</label>}
 
       <div className="formInputContainer">
         <input
           placeholder={placeholder}
+          disabled={disabled}
           type={
             inputType === "password"
               ? sideLabel === "hide"

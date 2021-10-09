@@ -9,7 +9,8 @@ const NumberInput = ({
   placeholder,
   onChange,
   max,
-  defaultValue
+  defaultValue,
+  disabled
 }) => {
   const [sideLabel, setSideLabel] = useState("show");
     const [number, setNumber] = useState("")
@@ -33,7 +34,9 @@ const NumberInput = ({
   };
 
   return (
-    <div className="formInput">
+    < div className = {
+      `formInput ${disabled === true ? `disabled` : `enabled`}`
+    } >
       {!hideLabel && <label>{label}</label>}
 
       <div className="formInputContainer">
@@ -41,8 +44,8 @@ const NumberInput = ({
           placeholder={placeholder}
           type="number"
           ref={inputRef}
+          disabled={disabled}
           onChange={(event) => {
-            console.log(event.target.value);
               if (String(event.target.value).length <= max){
                   setNumber(event.target.value)
                   if (onChange) {

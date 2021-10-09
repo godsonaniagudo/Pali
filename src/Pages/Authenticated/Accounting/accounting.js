@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import searchIcon from "../../../Assets/img/searchIcon.svg";
 import closeIcon from "../../../Assets/img/closeIcon.svg";
 import Modal from "../../../Components/Modal/modal";
@@ -26,6 +26,7 @@ const Accounting = () => {
   const [selectedCustomField, setSelectedCustomField] = useState({});
   const [tagCounter, setTagCounter] = useState([1]);
   const [newTags, setNewTags] = useState([]);
+  const [extraTags, setExtraTags] = useState([])
   const [customName, setCustomName] = useState("");
   const [showAddTagModal, setShowAddTagModal] = useState(false);
   const [fieldToEdit, setFieldToEdit] = useState({});
@@ -99,24 +100,25 @@ const Accounting = () => {
   const validateData = (event) => {
     event.preventDefault();
 
-    if (selectedGlobalTag === "Custom" && customName === "") {
+    if (Object.entries(fieldToEdit).length === 0 && customName === "") {
       showNotification("Custom name is required", "Error");
     } else if (newTags.length === 0) {
       showNotification("Add at least one tag", "Error");
     } else {
       closeNotification();
 
-      if (selectedGlobalTag === "Custom") {
-        const data = {
-          name: customName,
-          tags: newTags,
-        };
-        createCustomField(data);
+
+
+      if (Object.entries(fieldToEdit).length === 0) {
+              const data = {
+                name: customName,
+                tags: newTags,
+              };
+              createCustomField(data);
       } else {
-        console.log({ selectedGlobalTag });
         const data = {
-          id: selectedCustomField.id,
-          tags: newTags,
+          id: fieldToEdit.id,
+          tags: extraTags,
         };
         addTags(data);
       }
@@ -179,12 +181,15 @@ const Accounting = () => {
     temp = {};
     setFieldToEdit(temp);
     setSelectedGlobalTag(temp);
+    temp = [...extraTags]
+    temp=[]
+    setExtraTags(temp);
     setCustomName("");
     setShowAddTagModal(false);
   };
 
-  const deleteTag = async (tagID) => {
-    console.log({ tagID });
+  const deleteTag = async (tagID,tagIndex) => {
+
     try {
       const deleteTagRequest = await deleteProtected("/accounting/tag", {
         tag_id: tagID,
@@ -192,6 +197,9 @@ const Accounting = () => {
 
       if (deleteTagRequest.status) {
         showNotification("Tag removed", "Success");
+        var temp = [...tagCounter]
+        temp = temp.filter((item, index) => tagIndex !== index)
+        setTagCounter(temp)
       } else {
         showNotification(deleteTagRequest.message, "Error");
       }
@@ -238,6 +246,10 @@ const Accounting = () => {
     }
   }
 
+  const tagNameRef = useRef(null)
+
+
+
   return (
     <div className="settings">
       {notification.text !== "" && (
@@ -273,8 +285,8 @@ const Accounting = () => {
             <hr />
 
             <div className="body">
-              <p className="title font12 oxfordText">Select tag type</p>
-              {Object.entries(fieldToEdit).length === 0 && (
+              {/* <p className="title font12 oxfordText">Select tag type</p> */}
+              {/* {Object.entries(fieldToEdit).length === 0 && (
                 <DropDown
                   label="Tag Type"
                   data={globalTags}
@@ -287,86 +299,85 @@ const Accounting = () => {
                     setSelectedCustomField(temp);
                   }}
                 />
-              )}
+              )} */}
 
               {Object.entries(fieldToEdit).length !== 0 && (
                 <FormInput
                   defaultValue={capitalize(fieldToEdit.name)}
-                  disabled={true}
-                  label="Field Name"
+                  disabled={
+                    Object.entries(fieldToEdit).length !== 0 ? true : false
+                  }
+                  label="Custom Field"
                 />
               )}
 
-              {(Object.entries(selectedGlobalTag).length > 0 ||
-                Object.entries(fieldToEdit).length !== 0) && (
+              {Object.entries(fieldToEdit).length === 0 && (
                 <React.Fragment>
-                  <div>
-                    {selectedGlobalTag === "Custom" && (
-                      <React.Fragment>
-                        <p className="mt24 font12 oxfordText">Custom Name</p>
-                        <form
-                          onChange={(event) =>
-                            setCustomName(event.target.value)
-                          }
-                        >
-                          <FormInput label="Tag Name" />
-                        </form>
-                      </React.Fragment>
-                    )}
+                  <p className="mt24 font12 oxfordText">Custom Field</p>
+                  <form onChange={(event) => setCustomName(event.target.value)}>
+                    <FormInput label="Tag Name" />
+                  </form>
+                </React.Fragment>
+              )}
 
-                    <div className="mb16">
-                      {tagCounter.map((item, index) => (
+              <React.Fragment>
+                <div>
+                  <div className="mb16">
+                    {tagCounter.map((item, index) => (
+                      <form ref={tagNameRef}>
                         <ActionInput
-                          label="Item Name"
+                          label="Tag Name"
                           defaultValue={
-                            newTags[index] ? newTags[index].name : ""
+                            newTags[index]?.name ? newTags[index].name : ""
                           }
+
                           action={() => {
-                            console.log(newTags[index]);
                             if (newTags[index] && newTags[index]?.id) {
-                              deleteTag(newTags[index].id);
+                              deleteTag(newTags[index].id, index);
                             } else {
                               removeTag(index);
                             }
                           }}
                           onChange={(value) => {
-                            const temp = [...newTags];
-                            temp[index] = value;
-                            setNewTags(temp);
+                            if (Object.entries(fieldToEdit).length === 0){
+                              const temp = [...newTags];
+                              temp[index] = value;
+                              setNewTags(temp);
+                            } else {
+                              const temp = [...extraTags];
+                              temp[index] = value;
+                              setExtraTags(temp);
+                            }
                           }}
                         />
-                      ))}
-                    </div>
-
-                    {Object.entries(fieldToEdit).length === 0 && (
-                      <p
-                        className="pt15 mb30 font14 cursorPointer blueLinkUnderlined"
-                        onClick={() => {
-                          const temp = [...tagCounter];
-                          temp.push(1);
-                          setTagCounter(temp);
-                        }}
-                      >
-                        Add a new tag item
-                      </p>
-                    )}
+                      </form>
+                    ))}
                   </div>
 
-                  <form onSubmit={(event) => validateData(event)}>
-                    <div className="displayFlex flexJustifyEnd mt30">
-                      {Object.entries(fieldToEdit).length === 0 && (
-                        <Button
-                          label={
-                            Object.entries(fieldToEdit).length !== 0
-                              ? "Save"
-                              : "Create"
-                          }
-                        />
-                      )}
-                    </div>
-                  </form>
-                </React.Fragment>
-              )}
+                  <p
+                    className="pt15 mb30 font14 cursorPointer blueLinkUnderlined"
+                    onClick={() => {
+                      const temp = [...tagCounter];
+                      temp.push(1);
+                      setTagCounter(temp);
+                    }}
+                  >
+                    Add a new tag item
+                  </p>
+                </div>
+
+                <form onSubmit={(event) => validateData(event)}>
+                  <div className="displayFlex flexJustifyEnd mt30">
+                    <Button
+                      label={
+                        Object.entries(fieldToEdit).length !== 0
+                          ? "Save"
+                          : "Create"
+                      }
+                    />
+                  </div>
+                </form>
+              </React.Fragment>
             </div>
           </div>
         </Modal>
@@ -379,8 +390,8 @@ const Accounting = () => {
             body="You are about to delete a custom field. Continue?"
             confirm={() => deleteCustomField()}
             closeModal={() => {
-              setFieldToDelete("")
-              setShowDeleteField(false)
+              setFieldToDelete("");
+              setShowDeleteField(false);
             }}
           />
         </Modal>
@@ -466,7 +477,7 @@ const Accounting = () => {
 
         {activeTab === "custom tags" && (
           <CustomTags
-          fetchFields={fetchFields}
+            fetchFields={fetchFields}
             showNotification={(message, type) =>
               showNotification(message, type)
             }

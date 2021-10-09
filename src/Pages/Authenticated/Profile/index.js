@@ -23,6 +23,9 @@ const Profile = () => {
   const user = JSON.parse(localStorage.getItem("user"));
   const [dataValid, setDataValid] = useState(false)
   const [selectedBank, setSelectedBank] = useState({})
+  const [verifying, setVerifying] = useState(false)
+  const [accountName, setAccountName] = useState("")
+
 
   useEffect(() => {
     getBanks()
@@ -73,14 +76,46 @@ const Profile = () => {
 
     if (
       Object.values(selectedBank).length === 0 ||
-      event.target[0] === "" ||
-      event.target[1] === ""
+      event.target.value === "" ||
+      event.target.value === ""
     ) {
+      setAccountName("")
         setDataValid(false)
     } else {
         setDataValid(true)
+
+        
+
+        if (event.target.value.length === 10 && Object.values(selectedBank).length > 0) {
+                  const details = {
+                    bank_id: Number(selectedBank.id),
+                    account_number: String(event.target.value),
+                  };
+            verifyBankAccount(details)
+        } else {
+          setAccountName("")
+        }
     }
+
+    
       
+  }
+
+  const verifyBankAccount = async (details) => {
+    setVerifying(true)
+    try {
+      const verifyAccountRequest = await postProtected("/bank/verify", details);
+
+      if (verifyAccountRequest.status) {
+        setAccountName(verifyAccountRequest.data.account_name)
+      } else {
+        setAccountName("")
+        showNotification(verifyAccountRequest.message, "Error");
+      }
+      setVerifying(false)
+    } catch (error) {
+      showNotification(error.message, "Error")
+    }
   }
 
   const handleSubmit = async (event) => {
@@ -91,27 +126,20 @@ const Profile = () => {
         const details = {
           bank_id: Number(selectedBank.id),
           account_number: String(event.target[0].value),
+          account_name: accountName
         };
 
-        verifyAccount(details)
-      }
-  }
-
-  const verifyAccount = async (details) => {
-    try {
-      const verifyAccountRequest = await postProtected("/bank/verify", details);
-
-      if (verifyAccountRequest.status){
-        saveAccount(verifyAccountRequest.data);
+        saveAccount(details)
       } else {
-        showNotification(verifyAccountRequest.message, "Error");
+        showNotification("Your account details have not been verified", "Error")
       }
-    } catch (error) {
-      showNotification(error.message, "Error")
-    }
   }
+
+  console.log({selectedBank});
+
 
   const saveAccount = async (details) => {
+    console.log(details);
     try {
       const saveAccountRequest = await postProtected("/bank/account", details);
 
@@ -149,11 +177,11 @@ const Profile = () => {
             }}>
               <div className="pl20 pb20 pr20">
                 <div className="displayFlex flexJustifyBetween top">
-                  <DropDown label="BANK" data={bankNames} onSelect={index => setSelectedBank(banks[index])} />
-                  <NumberInput label="ACCOUNT NUMBER" placeholder="e.g 1230" />
+                  <DropDown disabled={verifying} label="BANK" data={bankNames} onSelect={index => setSelectedBank(banks[index])} />
+                  <NumberInput disabled={verifying} label="ACCOUNT NUMBER" placeholder="e.g 1230" />
                 </div>
 
-                <FormInput label="ACCOUNT NAME" />
+                <FormInput label="ACCOUNT NAME" disabled={true} defaultValue={accountName} />
               </div>
               <div className="pl20 pb20 pr20 pt30 displayFlex flexJustifyEnd">
                 <Button label="Add Bank Account" />
@@ -181,8 +209,8 @@ const Profile = () => {
         </div>
 
         <div className="userDetails pl20">
-          <p className="font16 oxfordText weight500">{`${user.user.firstname} ${user.user.lastname}`}</p>
-          <p className="font14 oxfordText mt5">{user.user.email}</p>
+          <p disabled={true} className="font16 oxfordText weight500">{`${user.user.firstname} ${user.user.lastname}`}</p>
+          <p disabled={true} className="font14 oxfordText mt5">{user.user.email}</p>
         </div>
       </div>
 
@@ -195,11 +223,13 @@ const Profile = () => {
                   label="FIRST NAME"
                   type="email"
                   defaultValue={user.user.firstname}
+                  disabled={true}
                 />
                 <FormInput
                   label="LAST NAME"
                   type="email"
                   defaultValue={user.user.lastname}
+                  disabled={true}
                 />
               </div>
 
@@ -208,10 +238,12 @@ const Profile = () => {
                   label="WORK EMAIL"
                   type="email"
                   defaultValue={user.user.email}
+                  disabled={true}
                 />
                 <NumberInput
                   label="PHONE NUMBER"
                   defaultValue={Number(user.user.phone)}
+                  disabled={true}
                 />
               </div>
             </form>
@@ -230,7 +262,7 @@ const Profile = () => {
               </p>
             </span>
             <div className="pb20">
-              <FormInput label="PASSWORD" type="password" side="Reset" />
+              <FormInput label="PASSWORD" type="password" side="Reset" disabled={true} />
             </div>
           </div>
         </Accordion>
@@ -242,13 +274,14 @@ const Profile = () => {
             <span className="displayFlex flexAlignCenter mb20">
               <img alt="alert" src={plainAlertIcon} />
               <p className="font13 oxfordText ml10">
-                {hasAccount
+                {
+                  user.counterparty.account_number !== ""
                   ? "An overview of your reimbursement account. For security reasons, you should contact your Account owner to change it safely."
                   : "Add your bank account information in order to receive reimbursement on time and seamlessly by your employer."}
               </p>
             </span>
 
-            {!hasAccount && (
+            {user.counterparty.account_number === "" && (
               <div>
                 <Button
                   label="Add a bank account"
@@ -259,14 +292,15 @@ const Profile = () => {
               </div>
             )}
 
-            {hasAccount && (
+            {
+              user.counterparty.account_number !== "" && (
               <div className="bankDetails">
                 <div className="displayFlex">
-                  <FormInput label="BANK" type="text" />
-                  <NumberInput label="ACCOUNT NUMBER" />
+                  <FormInput label="BANK" type="text" defaultValue={user.counterparty.bank_name} disabled={true} />
+                  <FormInput label="ACCOUNT NUMBER" defaultValue={Number(user.counterparty.account_number)} disabled={true} />
                 </div>
 
-                <FormInput label="ACCOUNT NAME" type="text" />
+                <FormInput label="ACCOUNT NAME" type="text" defaultValue={user.counterparty.account_name} disabled={true} />
               </div>
             )}
           </div>

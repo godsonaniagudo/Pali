@@ -1,10 +1,6 @@
 .formInput {
     box-sizing: border-box;
-    height: 40px;
-
-    .disabled {
-        background-color: rgb(235, 235, 235);
-    }
+    height: 42px;
 
     label {
         margin: 0px;
@@ -54,3 +50,13 @@
     }
 
 }
+
+    .disabled {
+        .formInputContainer {
+            background-color: rgb(235, 235, 235);
+
+            input {
+                background-color: rgb(231, 231, 231);
+            }
+        }
+    }

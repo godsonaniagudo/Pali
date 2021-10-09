@@ -20,6 +20,7 @@ const AddApprover = ({ team, index, onSelect, selectedTeamMembers }) => {
   const [selectedApprovers, setSelectedApprovers] = useState([]);
   const [selectedIDs, setSelectedIDs] = useState([]);
 
+
   useEffect(() => {
     if (selectedTeamMembers){
       setSelected()
@@ -50,7 +51,7 @@ const AddApprover = ({ team, index, onSelect, selectedTeamMembers }) => {
   const removeFromSelectedApprovers = (id) => {
     var temp = [...selectedApprovers];
     var tempIDs = [...selectedIDs];
-    temp = temp.filter((item) => item.user_id !== id);
+    temp = temp.filter((item) => item.user.id !== id);
     tempIDs = tempIDs.filter((item) => item !== id);
     setSelectedApprovers(temp);
     setSelectedIDs(tempIDs);
@@ -78,13 +79,13 @@ const AddApprover = ({ team, index, onSelect, selectedTeamMembers }) => {
 
       {selectedApprovers.map((item) => (
         <div className="selectedApproverItem">
-          <div>{getInitials(item.name)}</div>
-          <p>{item.name}</p>
+          <div>{getInitials(item?.user?.name ? item?.user?.name : item.name)}</div>
+          <p className="font14 oxfordText weight500">{item?.user?.name ? item?.user?.name : item.name}</p>
           <img
             alt="remove icon"
             src={closeIcon}
             className="close"
-            onClick={() => removeFromSelectedApprovers(item.user_id)}
+            onClick={() => removeFromSelectedApprovers(item?.user?.id ? item.user.id : item.user_id )}
           />
         </div>
       ))}
@@ -180,7 +181,7 @@ const Settings = () => {
       closeNotification()
       
       if (policyToEdit.amount){
-        updatePolicy()
+        updatePolicy(event.target[0].value)
       } else {
         savePolicy(event.target[0].value);
       }
@@ -204,7 +205,7 @@ const Settings = () => {
   const savePolicy = async (amount) => {
     try {
       const details = {
-        amount: Number(amount),
+        amount: Number(amount) * 100,
         currency_id : 76,
         approver : policyArray
       }
@@ -223,17 +224,18 @@ const Settings = () => {
     }
   }
 
-  const updatePolicy = async () => {
+  const updatePolicy = async (amount) => {
     // if (policyArray.length === 0){
     //   showNotification("You haven't added or edited a policy", "Error")
     //   return
     // }
+    console.log("update");
 
     try {
       const details = {
         policy_id:policyToEdit.id,
         amount: Number(
-          policyToEdit.amount.replace(",", "").replace(".", "").slice(1)
+          String(amount).replace(",", "").replace(".", "").slice(1)
         ),
         approver: policyArray,
       };
@@ -319,7 +321,7 @@ const Settings = () => {
                         .replace(",", "")
                         .replace(".", "")
                         .slice(1)
-                    )
+                    )/100
                   }
                 />
                 <p className="font14 oxfordText mt24 mb15">

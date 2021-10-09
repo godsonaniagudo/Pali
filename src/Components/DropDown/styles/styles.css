@@ -2,6 +2,7 @@
   position: relative;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
+  height: 42px;
 }
 
 .dropDown .imageListItem {
@@ -124,5 +125,13 @@
   margin-right: 20px;
   font-size: 10px;
   cursor: pointer;
+}
+
+.disabled .dropDownContainer {
+  background-color: #ebebeb;
+}
+
+.enabled .dropDownContainer {
+  background-color: white;
 }
 /*# sourceMappingURL=styles.css.map */

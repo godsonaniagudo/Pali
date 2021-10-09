@@ -1,6 +1,7 @@
 .dropDown {
     position: relative;
     box-sizing: border-box;
+    height: 42px;
 
     .imageListItem {
       display: flex;
@@ -109,3 +110,16 @@
     }
 
 }
+
+.disabled {
+  .dropDownContainer{
+    background-color: rgb(235, 235, 235);;
+  }
+  
+}
+
+.enabled {
+  .dropDownContainer {
+    background-color: white;
+}
+  }

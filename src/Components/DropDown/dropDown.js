@@ -4,7 +4,7 @@ import dropIcon from "../../Assets/img/dropIcon.svg";
 import dropIconUp from "../../Assets/img/dropIconUp.svg";
 import { capitalize, getInitials } from "../../helpers/formatStrings";
 
-const DropDown = ({ label, side, type, hideLabel, placeholder, data, onSelect, defaultValue}) => {
+const DropDown = ({ label, side, type, hideLabel, placeholder, data, onSelect, defaultValue, disabled}) => {
   const [sideLabel, setSideLabel] = useState("hide");
   const [inputType, setInputType] = useState("text");
   const [selecting, setSelecting] = useState(false);
@@ -16,19 +16,13 @@ const DropDown = ({ label, side, type, hideLabel, placeholder, data, onSelect, d
 
   }, []);
 
-  const handleSideClick = () => {
-    if (sideLabel === "show") {
-      setSideLabel("hide");
-    } else {
-      setSideLabel("show");
-    }
-  };
-
   const handleDropDownClick = () => {
-      if (selecting) {
+      if (!disabled){
+        if (selecting && disabled !== true) {
           setSelecting(false)
-      } else {
+        } else {
           setSelecting(true)
+        }
       }
   }
 
@@ -77,7 +71,9 @@ const DropDown = ({ label, side, type, hideLabel, placeholder, data, onSelect, d
   useOutsideAlerter(dropDownRef)
 
   return (
-    <div className="dropDown">
+    < div className = {
+      `dropDown ${disabled === true ? `disabled` : `enabled`}`
+    } >
       {!hideLabel && <label>{label}</label>}
 
       <div className="dropDownContainer" onClick={() => {handleDropDownClick()}}>
