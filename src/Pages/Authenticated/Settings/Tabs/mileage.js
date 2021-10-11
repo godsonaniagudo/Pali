@@ -82,15 +82,22 @@ const Mileage = ({
         }
     }
 
-    const updateMileageRate = async (payload) => {
+    const updateMileageRate = async (payload, type) => {
         try {
-            const setMileageRateRequest = await patchProtected("/expense/settings", payload)
+            setTimeout(async () => {
+                const setMileageRateRequest = await patchProtected("/expense/settings", payload)
 
-            if (setMileageRateRequest.status) {
-                showNotification("Succesfully set mileage rate", "Success")
-            } else {
-                showNotification(setMileageRateRequest.message, "Error")
-            }
+                if (setMileageRateRequest.status) {
+                    if (type === "category"){
+                        showNotification("Succesfully set default category", "Success")
+                    } else {
+                        showNotification("Succesfully set mileage rate", "Success")
+                    }
+                    
+                } else {
+                    showNotification(setMileageRateRequest.message, "Error")
+                }
+            }, 1500)
         } catch (error) {
             showNotification(error.message, "Error")
         }
@@ -111,7 +118,7 @@ const Mileage = ({
                             category_id: mileageSettings?.category?.id,
                             mileage_rate: Number(event.target.value),
                             id: mileageSettings.id
-                    })
+                    }, "rate")
                 } else {
                     setMileageRate({
                         mileage_rate: Number(event.target.value)
@@ -145,7 +152,7 @@ const Mileage = ({
                         category_id: categories[index].id,
                         mileage_rate: mileageSettings.rate,
                         id: mileageSettings.id
-                    })
+                    }, "category")
                 } else {
                     setMileageRate({
                         category_id: categories[index].id
