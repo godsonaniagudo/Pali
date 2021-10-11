@@ -225,22 +225,14 @@ const Settings = () => {
   }
 
   const updatePolicy = async (amount) => {
-    // if (policyArray.length === 0){
-    //   showNotification("You haven't added or edited a policy", "Error")
-    //   return
-    // }
-    console.log("update");
-
     try {
       const details = {
         policy_id:policyToEdit.id,
         amount: Number(
-          String(amount).replace(",", "").replace(".", "").slice(1)
-        ),
+          amount
+        ) * 100,
         approver: policyArray,
       };
-
-      console.log(details);
 
       const updatePolicyRequest = await patchProtected(
         "/policy",
@@ -248,7 +240,8 @@ const Settings = () => {
       );
 
       if (updatePolicyRequest.status){
-        console.log(updatePolicyRequest);
+        showNotification("Successfuly updated poliicy", "Success")
+        closeApproverModal()
       } else {
         showNotification(updatePolicyRequest.message, "Error")
       }

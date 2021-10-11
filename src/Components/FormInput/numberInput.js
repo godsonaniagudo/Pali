@@ -45,6 +45,7 @@ const NumberInput = ({
           type="number"
           ref={inputRef}
           disabled={disabled}
+          defaultValue={defaultValue}
           onChange={(event) => {
               if (String(event.target.value).length <= max){
                   setNumber(event.target.value)
@@ -57,11 +58,8 @@ const NumberInput = ({
         />
         {side && (
           <span
-            onClick={() => {
-              handleSideClick();
-            }}
           >
-            {sideLabel}
+            {side}
           </span>
         )}
       </div>
