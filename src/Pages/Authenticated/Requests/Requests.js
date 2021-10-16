@@ -9,6 +9,9 @@ import Modal from "../../../Components/Modal/modal";
 import "./styles/styles.css"
 import Button from "../../../Components/Button/button";
 import FormInput from "../../../Components/FormInput/formInput";
+import NumberInput from "../../../Components/FormInput/numberInput";
+import DropDown from "../../../Components/DropDown/dropDown";
+import uploadIcon from "../../../Assets/img/icons/uploadIcon.svg"
 
 
 
@@ -81,10 +84,19 @@ const Requests = () => {
       <Modal>
           <div className="createReimbursementModal">
             <div className="body">
-                <div className="left"></div>
+                <div className="left">
+                  <div>
+                    <div className="uploadPrompt displayFlex flexAlignCenter flexJustifyCenter">
+                        <div className="cursorPointer displayFlex flexColumn flexAlignCenter">
+                          <img alt="select file icon" src={uploadIcon} />
+                          <p className="font12 oxfordText weight400 mt10">Please upload a receipt for this expense</p>
+                        </div>
+                    </div>
+                  </div>
+                </div>
                 <div className="right">
                     <header>
-                        <p className="font14 oxfordText">New Out-Of-Pocket Expense</p>
+                        <p className="font14 oxfordText weight600">New Out-Of-Pocket Expense</p>
                         <img alt="close" src={closeIcon} />
                     </header>
 
@@ -93,6 +105,28 @@ const Requests = () => {
                     <div className="bodyContent">
                         <div className="outOfPocket">
                             <FormInput label="MERCHANT NAME" />
+
+                            <NumberInput label="AMOUNT" side="NGN" />
+
+                            <FormInput label="TRANSACTION DATE" />
+
+                            <div className="mb24">
+                              <DropDown label="CATEGORY" placeholder="Select a category" data={[]} />
+                            </div>
+
+                            <div className="mb50">
+                              <FormInput label="NOTE" placeholder="Add a business purpose to this expense.
+                                Example: Client meeting - Acme.com" />
+                            </div>
+
+                          <p className="font12 oxfordText weight600 mt24">Additional Details</p>
+                          <div className="mb50">
+                            <FormInput label="TAGS" />
+                          </div>
+
+                          <p className="font12 oxfordText weight600 mt24">Approvals</p>
+                          <p className="font12 secondaryColorText mt16">Require approval from one of the following team members</p>
+                          <DropDown label="1ST APPRROVAL" data={[]} />
                         </div>
                     </div>
                 </div>

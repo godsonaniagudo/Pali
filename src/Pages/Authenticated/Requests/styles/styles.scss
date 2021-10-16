@@ -1,6 +1,6 @@
 .createReimbursementModal {
   width: 1300px;
-  height: 90vh;
+
   background-color: white;
   display: flex;
   flex-direction: column;
@@ -8,10 +8,21 @@
   .body {
     flex-grow: 1;
     display: flex;
+    height: 80vh;
+
 
     .left {
       flex-grow: 1;
       height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      .uploadPrompt {
+        width: 400px;
+        height: 400px;
+        background-color: rgba(242, 242, 242, 1);
+      }
     }
 
     .right {
@@ -20,6 +31,8 @@
       border-left-style: solid;
       border-left-width: 1px;
       border-left-color: rgb(226, 226, 226);
+      overflow-y: scroll;
+      
 
       header {
         display: flex;
@@ -43,6 +56,11 @@
           padding: 25px;
           width: 100%;
           box-sizing: border-box;
+
+          label {
+            color: rgba(141, 141, 141, 1);
+            font-size: 10px;
+          }
       }
     }
   }
